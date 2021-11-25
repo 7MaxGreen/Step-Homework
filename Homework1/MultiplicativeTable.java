@@ -8,7 +8,7 @@
 
                 int s = n*i; 
 
-                System.out.println(s);
+                System.out.println(n+"*"+i+"="+s);
                 
             }
         }
