@@ -1,11 +1,15 @@
 public class SumDoWhile{
     public static void main (String[] args){
 
-        int n = 2;
+    int n = 10;
+    int i = 0;
+    int sum = 0;
 
         do{
-            n+=n;
-            System.out.println(n);
-        }while(n<=7);
+            sum = sum + i;
+            i++;
+            
+        }while(i<=n);
+        System.out.println(sum);
     }
 }
