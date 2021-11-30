@@ -2,12 +2,19 @@
 public class SumWhile{
     public static void main (String[] args){
 
-        int n = 2;
+    int n = 10;
+    int i = 0;
+    int sum = 0;
 
-        while(n<=7)
-        {
-            n+=n;
-            System.out.println(n);
-        }
+        while(i<=n)
+            {
+
+            sum = sum + i;
+            
+            i++;
+           
+            }
+
+        System.out.println(sum);
     }
 }
