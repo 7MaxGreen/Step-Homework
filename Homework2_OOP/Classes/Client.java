@@ -52,9 +52,15 @@ public class Client{
     //     this.subscriptionType.getDiscount();
     // }
 
-    public void checkMastery(short frequencyOfVisit){
-        if (frequencyOfVisit < 300) {System.out.println("Begginer - Good work, keep doing the great job.");}
-        else if (frequencyOfVisit >= 300 && frequencyOfVisit <= 900) {System.out.println("You look awesome, always an example to newcomers");}
-        else if(frequencyOfVisit>900){System.out.println("Bulky and healthy, you got the high standards!");}
+    public void checkMastery(){
+        if (this.frequencyOfVisit < 300) {
+            System.out.println("Begginer - Good work, keep doing the great job.");
+            }
+        else if (this.frequencyOfVisit >= 300 && this.frequencyOfVisit <= 900) {
+            System.out.println("You look awesome, always an example to newcomers");
+            }
+        else if(this.frequencyOfVisit>900){
+            System.out.println("Bulky and healthy, you got the high standards!");
+            }
     }
 }

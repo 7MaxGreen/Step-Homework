@@ -1,4 +1,4 @@
-public class CityInfrastructure{
+public class CityInfrastructure extends City{
 
     public BusLine busLine;
     public UndergroundLine undergroundLine;

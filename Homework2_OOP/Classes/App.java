@@ -115,14 +115,76 @@ public class App{
        System.out.println("Garden's perimeter equals to " + garden.perimeterCalculate());
 
        //GOVERNOR
-       Governor governor = new Governor("Franklin", "Clinton", "Democratic", true, super.getVoteDecision, super.getNewLaw, super.getConclusion);
+       Governor governor = new Governor("Franklin", "Clinton", "Democratic");
 
         System.out.println(governor.getName());
         System.out.println(governor.getSurname());
         System.out.println(governor.getParty());
-        // System.out.println(super().getVoteDecision());
-        // System.out.println(governor.getNewLaw());
-        // System.out.println(governor.getConclusion());
+
+        //LAW APPROVAL
+        LawApproval law = new LawApproval(true, "Obey and Pay", "new law has been approved by unanimous voting")
+        System.out.println(law.getVoteDecision());
+        System.out.println(law.getNewLaw());
+        System.out.println(law.getConclusion());
+
+        //GYM
+        Gym gym = new Gym();
+        gym.setName();
+        gym.setAddress();
+        gym.setMembers();
+
+        System.out.println(gym.getName());
+        System.out.println(gym.getAddress());
+        System.out.println(gym.getMembers());
+
+        gym.checkSize();
+
+        //CLIENT
+        Client client = new Client();
+        client.setName();
+        client.setSurname();
+        client.setFrequencyOfVisit();
+        //client.setSubscription(); ------------------------------------------------
+
+        client.checkMastery();
+
+        //SUBSCRIPTION
+        Subscription sub = new Subscription();
+        sub.setSubscriptionType();
+        sub.setPeriod();
+        sub.setPrice();
+        sub.setDiscount();
+
+        System.out.println(sub.getSubscriptionType());
+        System.out.println(sub.getPeriod());
+        System.out.println(sub.getPrice());
+        System.out.println(sub.getDiscount());
+
+        //HEALTH SERVICES
+        HealthServices health = new HealthServices("Hospital", "hospitalization, emergency, surgical, x-ray-radiology, blood, laboratory services", "NY-333 AVENUE");
+        System.out.println(helth.getType());
+        System.out.println(helth.getServices());
+        System.out.println(helth.getAddress());
+
+        //TELECOMMUNICATION SYSTEM
+        TelecommunicationSystem net = new TelecommunicationSystem("Packet switched networks", "(WAN) protocols, including Frame Relay, X. 25, and TCP/IP", "Packet switching");
+        System.out.println(net.getType());
+        System.out.println(net.getTechnicalConcepts());
+        System.out.println(net.getRegulation());
+
+        //WATER DRAINAGE SYSTEM
+        WaterDrainageSystem water = new WaterDrainageSystem("Brick Sewer" , "30 million tonnes", "water (99.9%)", "1858");
+
+        System.out.println(water.getYearOfInstallation());
+        System.out.println(water.getWaterQuality());
+        System.out.println(water.getWaterQuantity());
+        System.out.println(water.getSewerType());
+
+
+
+
+
+
 
        
     }

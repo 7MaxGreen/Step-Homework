@@ -21,9 +21,4 @@ public class LawApproval{
         return this.conclusion;
     }
 
-    public void lawDecision(boolean voteDecision, String newLaw){
-        if(voteDecision == true) {
-            System.out.println("The official substitute law which is "+ newLaw +" has been approved;");
-        } else System.out.println("The official substitute law which is "+ newLaw +"has been denied due to: " + conclusion);
-    }
 }

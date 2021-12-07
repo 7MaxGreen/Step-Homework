@@ -45,4 +45,5 @@ public class Subscription{
     public byte getDiscount(){
         return this.discount;
     }
+
 }

@@ -1,9 +1,7 @@
 public class Candle{
    
         private String waxColor;
-
-        private String candleWick;
-
+        private String candleWick; 
         private static String form;
 
         public Candle(String waxColor, String candleWick, String form){

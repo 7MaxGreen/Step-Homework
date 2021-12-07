@@ -8,4 +8,16 @@ public class TelecommunicationSystem{
         this.regulation = regulation;
         this.technicalConcepts = technicalConcepts;
     }
+
+    public String getType(){
+      return this.type;
+    }
+
+    public String getRegulation(){
+      return this.regulation;
+    }
+
+    public String getTechnicalConcepts{
+      return this.technicalConcepts;
+    }
 }

@@ -4,8 +4,7 @@ public class Governor{
     private String party;
     private LawApproval lawApproval;
 
-    public Governor(String name, String surname, String party, LawApproval lawApproval){
-        super();
+    public Governor(String name, String surname, String party){
         this.name = name;
         this.surname = surname;
         this.party = party;
