@@ -1,16 +1,28 @@
 public class Candle{
    
-        public String waxColor;
+        private String waxColor;
 
-        public String candleWick;
+        private String candleWick;
 
-        public static String form;
+        private static String form;
 
-        // public Candle(String waxColor, String candleWick, String form){
-        //     this.waxColor = waxColor;
-        //     this.candleWick = candleWick;
-        //     this.form = form;
-        // }
+        public Candle(String waxColor, String candleWick, String form){
+            this.waxColor = waxColor;
+            this.candleWick = candleWick;
+            this.form = form;
+        }
+
+        public String getWaxColor(){
+            return this.waxColor;
+        }
+
+        public String getCandleWick(){
+            return this.candleWick;
+        }
+
+        public String getForm(){
+            return this.form;
+        }
 
 
         public void lighted(boolean lighter){

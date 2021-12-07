@@ -1,32 +1,46 @@
-public class Car{
+public class Car extends Vehicle{
     
-        public String[] roofType;
-        public String ChassisControlType;
-        public String ESP;
-        public String headlightType;
-        public String discType;
+        private String roofType;
+        private String chassisControlType;
+        private boolean esp;
+        private String headlightType;
+        private String discType;
 
-        public String carModel;
-    
+        super();
 
-    public void summary(String[] carModel){
-        if(ESP == "included" && headlightType == "double xenon" && discType == "ventilated"){
+          public Car(String roofType, String chassisControlType, boolean esp, String headlightType, String discType){
 
-           System.out.println("Your suitable option could be " + carModel[1]);     
+             super(make,  model,  variant,  fuelType,  transmissionType,  electricBatteries,  yearOfManufacturing,  batteryCapacity);
 
-        } else if ( ESP == "included" && headlightType == "laser" && discType == "drilled" ){
-
-            System.out.println("Your suitable option could be " + carModel[0]);
-
-        } else if ( ESP == "included" && headlightType == "double xenon" && discType == "ceramic"  ){
-
-            System.out.println("Your suitable option could be " + carModel[3]);
-
-        } else if ( ChassisControlType == "four-c" && headlightType == "led" && discType == "flat"  ){
-
-            System.out.println("Your suitable option could be " + carModel[2]);
+            this.roofType = roofType;
+            this.chassisControlType = chassisControlType;
+            this.esp = esp;
+            this.headlightType = headlightType;
+            this.discType = discType;
         }
 
-        
-    }
+        public String getRoofType(){
+            return this.roofType;
+        }
+
+          public String getChassisControlType(){
+            return this.chassisControlType;
+        }
+
+          public boolean getESP(){
+            return this.esp;
+        }
+
+          public String getHeadlightType(){
+            return this.headlightType;
+        }
+
+          public String getDiscType(){
+            return this.discType;
+        }
+
+
+      
+
+
 }

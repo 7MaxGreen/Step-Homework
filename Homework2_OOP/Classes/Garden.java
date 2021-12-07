@@ -1,20 +1,43 @@
 public class Garden{
-    public float length;
-    public float width;
+    private float length;
+    private float width;
+    private boolean plants;
 
-    public boolean plants;
-
-
-    public void checkForPlants(boolean plants){
-        if(plants == true) System.out.println("Good job, keep planting!");
-        else System.out.println("Love it or hate it, you MUST plant and grow some TREES!!!");
+    public void setLength(float length){
+        this.length = length;
     }
 
-      public float perimeterCalculate(float length, float width){
+    public void setWidth(float width){
+        this.width = width;
+    }
+
+    public void setPlants(boolean plants){
+        this.plants = plants;
+    }
+
+    public float getLength(){
+        return this.length;
+    }
+
+    public float getWidth(){
+        return this.width;
+    }
+
+    public boolean getPlants(){
+        return this.plants;
+    }
+
+
+    public String checkForPlants(){
+       String result =  (this.plants == true) ? "Good job, keep planting!" : "Love it or hate it, you MUST plant and grow some TREES!!!";
+       return result;
+    }
+
+      public float perimeterCalculate(){
           float result = 0;
 
-        if(length == width) result = length * 4;
-        else if(length != width) result = (length * 2) + (width * 2);
+        if(this.length == this.width) result = this.length * 4;
+        else if(this.length != this.width) result = (this.length * 2) + (this.width * 2);
         return result;
     }
 }

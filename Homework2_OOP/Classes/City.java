@@ -1,8 +1,8 @@
 public class City{
     
-        public String name;
-        public double population;
-        public String council;
+        private String name;
+        private double population;
+        private String council;
 
         public City(String name, double population, String council) {
             this.name = name;
@@ -10,11 +10,21 @@ public class City{
             this.council = council;
         }
 
-        public static void maxPopulation(double population, double population1)
-        {
-            if(population > population1){
-                System.out.println("First city has a higher population density");
-            }else {System.out.println("Second city has a higher population density");}
+        public String getName(){
+            return this.name;
+        }
+
+         public String getCouncil(){
+            return this.council;
+        }
+
+         public double getPopulation(){
+            return this.population;
+        }
+
+        public static String maxPopulation(City city, City city2)
+        {   
+            return city.population > city2.population? "First city has a higher population density" : "Second city has a higher population density";
         }
 
         public void guessTheCountry(String name)

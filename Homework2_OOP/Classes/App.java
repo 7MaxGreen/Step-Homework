@@ -1,111 +1,129 @@
 public class App{
     public static void main(String[] args){
 
-        //Candle class;
-        Candle candle = new Candle();
+        //BridgeSystem
+        BridgeSystem bridge = new BridgeSystem("Arch", "fiber reinforced polymers", "transportation");
+
+        System.out.println(bridge.getForm());
+        System.out.println(bridge.getPorpose());
+
+
+        //CANDLE
+         Candle candle = new Candle("purple", "cotton", "cylinder");
         
-        boolean lighter = true;
+         boolean lighter = true;
 
-        candle.lighted(lighter);
+         candle.lighted(lighter);
 
-        candle.lightTheCandle("green", "cotton candlewick", "cylinder");
+         System.out.println(candle.getWaxColor());
+         System.out.println(candle.getCandleWick());
 
+         candle.lightTheCandle("green", "cotton candlewick", "cylinder");
 
-        //Car class;
+   /*
+         // CAR
 
-        Car car = new Car();
+         Car car = new Car("convertible", "electronic chassis type", true, "double xenon", "ceramic drilled");
 
-        car.roofType = new String[] {"hardtop", "convertible", "sunroof"};
-        System.out.println("ROOF TYPES: " + car.roofType);
+         System.out.println(car.getRoofType(), car.getChassisControlType(), car.getESP(), car.getHeadlightType(), car.getDiscType());
 
+         // CAR PUBLIC LINE
+         CarPublicLine carPublic = new CarPublicLine("Police", "LA-PD-233");
         
-        // public String[] ChassisControlType = {"tubular", "four-c", "monocoque", "backbone"};
-        // public String[] ESP={"included", "excluded"};
-        // public String[] headlightType ={"halogen", "xenon", "double xenon", "led", "laser"};
-        // public String[] discType = {"ventilated", "drilled", "ceramic", "flat"};
-        // public String[] carModel = {"MERCEDES C 200 d COMFORT 9-G", "Volkswagen Tiguan Se 4motion W", "Volvo XC 60 AWD Summum D3 NAVI", "BMW 3 Series CC E93 E92 Cabrio Coupe 10"};
-
-
-        //City class;
+         System.out.println(carPublic.getFieldOfActivity());
+         System.out.println(carPublic.getLicensePlate());
+   */
+        //CITY
         City city = new City("London", 8982000000d , "London councils");
         City city1 = new City("Singapore", 5686000000d, "Singapore national coucil");
-        System.out.println(city.name);
-        city.guessTheCountry(city.name);
-        city.maxPopulation(8982000000d, 5686000000d);
+        System.out.println(city.getName());
+        System.out.println(city.getPopulation());
+        System.out.println(city.getCouncil());
+        city.maxPopulation(city, city1);
+        city.guessTheCountry("Kuala Lampur");
 
 
-        //CityInfrastructure class;
-        CityInfrastructure cityInfrastructure = new CityInfrastructure();
-
-        //cityInfrastructure.busLine = "L2333";
-
-
-        //Company class;
-        Company company = new Company("AUTODOC", "BERLIN 323 GMBH", "233-332-11-2212-33-1", "autodoc@mail.de", "1823456789112345678US");
-        System.out.println("L:" + company.CIN.length());
+        //CITY INFRASTRUCTURE
+        // CityInfrastructure cityInfrastructure = new CityInfrastructure();
         
-        System.out.println(company.CIN.substring(18, company.CIN.length()));
-        company.checkIDNO("12345678901234567US");
+        //CLIENT
+
+        Client client = new Client();
+
+        client.setName();
+        client.setSurname();
+        client.setFrequencyOfVisit();
+        client.setSubscription();
+
+        System.out.println(client.getName());
+        System.out.println(client.getSurname());
+        System.out.println(client.getFrequencyOfVisit());
+        //System.out.println(client.getSubscription()); -------------------------------------------
 
 
-        //Country class;
-        Country country = new Country("Morocco", "MOR", "Rabat", "Dirham marocan");
-        System.out.println(country.name);
-        System.out.println(country.currency);
+        //COMPANY
+        Company company = new Company("AUTODOC", "BERLIN 323 GMBH", "233-332-11-2212-33-1", "autodoc@mail.de", "123456789112345678US");
+        System.out.println("L:" + company.getCin().length());
+        
+        System.out.println(company.getCin().substring(18, company.getCin().length()));
+        
+        company.checkIDNO();
 
-        country.guessTheCapital("Israel");
+        //COUNTRY
 
+        Country country = new Country("The United Kingdom", "UK", "London", "GB");
 
-        //{"Morocco", "Malaysia", "Indonesia", "USA", "Russia", "The United Kingdom", "Moldova", "Isle of Man"}
+        System.out.println(country.getName());
+        System.out.println(country.getFlag());
+        System.out.println(country.getCapital());
+        System.out.println(country.getCurrency());
 
+       //DRIVER
+       Driver driver = new Driver("Alex", "Ferguson", (byte)76, (byte)48, "B, C", "Mainly worked in Manchester area");
 
-        //Government class;
-        Government government = new Government();
+       System.out.println(driver.getName());
+       System.out.println(driver.getSurname());
+       System.out.println(driver.getAge());
+       System.out.println(driver.getYearsOfExperience());
+       System.out.println(driver.getDrivingLicenseType());
+       System.out.println(driver.getWorkHistory());
 
-        government.name = "William";
-        government.surname = "Defoe";
-        government.party = "Republicans";
-        government.newLaw = "Commercial Security Agreements have to be transparent and voted unanimously by all parties.";
-        government.decision = true;
+       //GARAGE
+       Garage garage = new Garage();
 
-        government.offerNewLaw();
-        government.newLawDecision(government.decision, government.newLaw);
+       garage.setLength(34.5f);
+       garage.setWidth(44.42f);
+       garage.setHeight(4.5f);
+       garage.setRawMaterial("British Bricks");
 
+       System.out.println(garage.getLength());
+       System.out.println(garage.getWidth());
+       System.out.println(garage.getLength());
+       System.out.println(garage.getRawMaterial());
 
-        //Garage class;
+       System.out.println("Volume of the new garage is: " + garage.volumeCalculate());
+       System.out.println("The perimeter of the new garage is: " + garage.perimeterCalculate());
 
-        Garage garage = new Garage();
+       //GARDEN
 
-        garage.length = 6f;
-        garage.width = 6f;
-        garage.height = 3.6f;
+       Garden garden = new Garden();
+       garden.setLength(23f);
+       garden.setWidth(43.44f);
+       garden.setPlants(true);
 
-        System.out.println("Garage volume = " + garage.volumeCalculate(garage.length, garage.width, garage.height));
-        System.out.println("Garage perimeter= " + garage.perimeterCalculate(garage.length, garage.width));
+       System.out.println(garden.checkForPlants());
+       System.out.println("Garden's perimeter equals to " + garden.perimeterCalculate());
 
+       //GOVERNOR
+       Governor governor = new Governor("Franklin", "Clinton", "Democratic", true, super.getVoteDecision, super.getNewLaw, super.getConclusion);
 
-        //Garden class;
+        System.out.println(governor.getName());
+        System.out.println(governor.getSurname());
+        System.out.println(governor.getParty());
+        // System.out.println(super().getVoteDecision());
+        // System.out.println(governor.getNewLaw());
+        // System.out.println(governor.getConclusion());
 
-        Garden garden = new Garden();
-        garden.length = 23.78F;
-        garden.width = 138.2F;
-        garden.plants = false;
-
-        garden.checkForPlants(garden.plants);
-        System.out.println("Garden perimeter: " + garden.perimeterCalculate(garden.length, garden.width));
-
-
-        //Gym class;
-
-        Gym gym = new Gym();
-        gym.name = "Kingston's GYM";
-        gym.address = "King Road Avenue TW10 7RF";
-        gym.members = 323;
-        gym.frequencyOfVisit = 323;
-
-        gym.checkSize(gym.members);
-        gym.checkMastery(gym.frequencyOfVisit);
-
-
+       
     }
 }
