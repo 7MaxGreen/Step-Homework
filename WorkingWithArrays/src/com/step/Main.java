@@ -15,7 +15,7 @@ public class Main {
         //Class for creating arrays (length and elements);
         CreateArray myArray = new CreateArray();
 
-        //Class for display
+        //Class for displaying
         DisplayArray arrayDisplay = new DisplayArray();
 
         //returns an array of integer values;
@@ -24,9 +24,8 @@ public class Main {
 
         //Class to calculate the sum of array's elements;
         ArraySum arraySum = new ArraySum();
-        //returns the sum of integer elements;
-        System.out.println(arraySum.sum(intArray));
-
+        //displays the sum of all integer elements;
+         arraySum.sum(intArray);
 
 
         //Class that finds the maximum and minimum values from the array;
@@ -44,7 +43,7 @@ public class Main {
         vowelOrConsonant.findL(charArray);
 
 
-        //Class which reverse the array;
+        //Class which reverses the array;
         ReverseArray reverse = new ReverseArray();
         int[] reversedArray = reverse.Sort(intArray);
         arrayDisplay.display(reversedArray);
