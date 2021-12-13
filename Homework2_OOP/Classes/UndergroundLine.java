@@ -5,14 +5,16 @@ public class UndergroundLine extends Vehicle{
    private short tubeNr;
    private short ticketCost;
 
-    public UndergroundLine(short passengersPerTrain, float energyConsumed, String routeNumber, short tubeNr){
+    public UndergroundLine(short passengersPerTrain, float energyConsumed, String routeNumber, short tubeNr, String make, String model, String variant, String fuelType, String transmissionType, boolean electricBatteries, short yearOfManufacturing, short batteryCapacity){
+        super( make,  model,  variant,  fuelType,  transmissionType,  electricBatteries,  yearOfManufacturing,  batteryCapacity);
         this.passengersPerTrain = passengersPerTrain;
         this.energyConsumed = energyConsumed;
         this.routeNumber = routeNumber;
         this.tubeNr = tubeNr;
     }
-
-    public UndergroundLine(short ticketCost){
+/*
+    public UndergroundLine(short ticketCost, String make, String model, String variant, String fuelType, String transmissionType, boolean electricBatteries, short yearOfManufacturing, short batteryCapacity){
+        super( make,  model,  variant,  fuelType,  transmissionType,  electricBatteries,  yearOfManufacturing,  batteryCapacity);
         if(this.passengersPerTrain >= 1000) {
             this.ticketCost = ticketCost; 
             System.out.println("Expected");
@@ -30,7 +32,7 @@ public class UndergroundLine extends Vehicle{
             System.out.println("High price increase"); 
             }
     }
-
+*/
     public short getPassengerPerTrain(){
         return this.passengersPerTrain;
     }

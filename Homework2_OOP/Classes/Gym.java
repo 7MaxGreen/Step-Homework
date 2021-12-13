@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Gym{
     private String name;
@@ -7,21 +6,31 @@ public class Gym{
     private Client client;
 
     public void setName(){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Input name: ");
-        this.name = sc.nextLine();
+        System.out.print("Input Gym name: ");
+        this.name = Display.sc.nextLine();
     }
 
     public void setAddress(){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Input address: ");
-        this.address = sc.nextLine();
+        System.out.println("Input Gym address: ");
+        this.address = Display.sc.nextLine();
     }
 
     public void setMembers(){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Input members number: ");
-        this.members = sc.nextShort();
+        System.out.println("Input Gym members number: ");
+        this.members = Display.sc.nextShort();
+    }
+
+    public void setClient(){
+
+        this.client = new Client();
+        this.client.setName();
+        this.client.setSurname();
+        this.client.setFrequencyOfVisit();
+        this.client.setSubscription();
+    }
+
+    public Client getClient(){
+        return this.client;
     }
 
     public String getName(){

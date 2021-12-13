@@ -8,9 +8,8 @@ public class Car extends Vehicle{
 
        
 
-        public Car(String roofType, String chassisControlType, boolean esp, String headlightType, String discType){
-
-             //super(make,  model,  variant,  fuelType,  transmissionType,  electricBatteries,  yearOfManufacturing,  batteryCapacity);
+        public Car(String roofType, String chassisControlType, boolean esp, String headlightType, String discType, String make, String model, String variant, String fuelType, String transmissionType, boolean electricBatteries, short yearOfManufacturing, short batteryCapacity){
+          super( make,  model,  variant,  fuelType,  transmissionType,  electricBatteries,  yearOfManufacturing,  batteryCapacity);
 
           this.roofType = roofType;
           this.chassisControlType = chassisControlType;
@@ -39,4 +38,52 @@ public class Car extends Vehicle{
             return this.discType;
         }
 
+        public void displaySuperClass(){
+
+          System.out.println(
+                             "Make: " + getMake() +
+                             " Model: " + getModel() +
+                             " Variant: " + getVariant() +
+                             " Fuel Type: " + getFuelType() +
+                             " Transmission: " + getTransmissionType() +
+                             " Year of manufacturing: " + getYearOfManufacturing() +
+                             " Electric Batteries: " + getElectricBatteries() + 
+                             " Battery capacity: " + getBatteryCapacity());
+        }
+
+        
 }
+
+/*
+        public String getMake(){
+          return super.getMake();
+        }
+
+        public String getModel(){
+        return super.model;
+        }
+
+        public String getVariant(){
+        return super.variant;
+        }
+
+        public String getFuelType(){
+          return super.fuelType;
+        }
+
+        public String getTransmissionType(){
+        return super.transmissionType;
+        }
+
+        public boolean getElectricBatteries(){
+         return super.electricBatteries;
+        }
+
+        public short getYearOfManufacturing(){
+          return super.yearOfManufacturing;
+        }
+
+        public short getBatteryCapacity(){
+        return super.batteryCapacity;
+        }
+*/

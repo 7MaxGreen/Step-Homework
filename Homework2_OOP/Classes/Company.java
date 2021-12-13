@@ -7,12 +7,34 @@ public class Company{
     private String cin;
     private int financialStartUp;
 
-    public Company(String name, String address, String phoneNumber, String email, String cin){
+    public Company(String name, String address, String fieldOfActivity, String phoneNumber, String email, String cin){
         this.name = name;
         this.address = address;
+        this.fieldOfActivity = fieldOfActivity;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.cin = cin;
+
+        if(fieldOfActivity.equals("financial")) {
+            this.financialStartUp = 100; 
+            }
+        else if(fieldOfActivity.equals("construction")) {
+            this.financialStartUp = 150; 
+            }
+        else if(fieldOfActivity.equals("health & beverage")) {
+            this.financialStartUp = 200; 
+            }
+        else if(fieldOfActivity.equals("IT")) {
+            this.financialStartUp = 250; 
+            }
+        else if(fieldOfActivity.equals("sales")) {
+            this.financialStartUp = 170; 
+            }
+        else if(fieldOfActivity.equals("manufacturing")) {
+            this.financialStartUp = 75; 
+        } else { 
+            System.out.println("Choose from the given categories: financial, construction, health & beverage, IT, sales, manufacturing");
+        }
     }
 
     public String getName(){
@@ -43,30 +65,6 @@ public class Company{
         return this.financialStartUp;
     }
 
-
-    public void checkCompany(){
-
-        if(fieldOfActivity.equals("financial")) {
-            this.financialStartUp = 100; 
-            }
-        else if(fieldOfActivity.equals("construction")) {
-            this.financialStartUp = 150; 
-            }
-        else if(fieldOfActivity.equals("health & beverage")) {
-            this.financialStartUp = 200; 
-            }
-        else if(fieldOfActivity.equals("IT")) {
-            this.financialStartUp = 250; 
-            }
-        else if(fieldOfActivity.equals("sales")) {
-            this.financialStartUp = 170; 
-            }
-        else if(fieldOfActivity.equals("manufacturing")) {
-            this.financialStartUp = 75; 
-        } else { 
-            System.out.println("Choose from the given categories: financial, construction, health & beverage, IT, sales, manufacturing");
-        }
-    }
 
     public void checkIDNO(){
         if(cin == null || cin.length() != 20) {

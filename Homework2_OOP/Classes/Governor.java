@@ -11,6 +11,17 @@ public class Governor{
         
     }
 
+    public void setLawApproval(){
+        this.lawApproval = new LawApproval();
+        this.lawApproval.setVoteDecision();
+        this.lawApproval.setNewLaw();
+        this.lawApproval.setConclusion();
+    }
+
+    public LawApproval getLawApproval(){
+        return this.lawApproval;
+    }
+
     public String getName(){
         return this.name;
     }
@@ -22,5 +33,7 @@ public class Governor{
     public String getParty(){
         return this.party;
     }
+
+
 
 }

@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Client{
     private String name;
@@ -8,21 +7,19 @@ public class Client{
 
 
     public void setName(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Input your name : ");
-        this.name = sc.nextLine();
+        System.out.println("Input client name : ");
+        this.name = Display.sc.nextLine();
+
     }
 
     public void setSurname(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Input your surname : ");
-        this.surname = sc.nextLine();
+        System.out.println("Input client surname : ");
+        this.surname = Display.sc.nextLine();
     }
 
     public void setFrequencyOfVisit(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Input frequency of visit : ");
-        this.frequencyOfVisit = sc.nextShort();
+        this.frequencyOfVisit = Display.sc.nextShort();
     }
 
     public void setSubscription(){
@@ -45,12 +42,10 @@ public class Client{
         return this.frequencyOfVisit;
     }
 
-    // public Subscription getSubscription(){
-    //     this.subscriptionType.getSubscriptionType();
-    //     this.subscriptionType.getPeriod();
-    //     this.subscriptionType.getPrice();
-    //     this.subscriptionType.getDiscount();
-    // }
+    public Subscription getSubscription(){
+      return  this.subscriptionType;
+    
+    }
 
     public void checkMastery(){
         if (this.frequencyOfVisit < 300) {

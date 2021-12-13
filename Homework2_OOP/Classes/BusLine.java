@@ -3,18 +3,21 @@ public class BusLine extends Vehicle{
     private String route;
     private byte ticketCost;
     private byte passengersPerBus;
-    
-    //super(String make, String model, String variant, String fuelType, String transmissionType, boolean electricBatteries, short yearOfManufacturing, short batteryCapacity);
+    private Driver driver;
 
-    public BusLine(String lineNr, String route, byte passengersPerBus, Vehicle vehicle){
-        super();
+
+    public BusLine(String lineNr, String route, byte passengersPerBus, String make, String model, String variant, String fuelType, String transmissionType, boolean electricBatteries, short yearOfManufacturing, short batteryCapacity){
+        super( make,  model,  variant,  fuelType,  transmissionType,  electricBatteries,  yearOfManufacturing,  batteryCapacity);
+
         this.lineNr = lineNr;
         this.route = route;
         this.passengersPerBus = passengersPerBus;
         
     }
 
-    public BusLine(byte ticketCost){
+    public BusLine(byte ticketCost, String make, String model, String variant, String fuelType, String transmissionType, boolean electricBatteries, short yearOfManufacturing, short batteryCapacity){
+        super( make,  model,  variant,  fuelType,  transmissionType,  electricBatteries,  yearOfManufacturing,  batteryCapacity);
+
         if(this.passengersPerBus >= 1000) {
             this.ticketCost = ticketCost; 
             System.out.println("Expected");
@@ -32,6 +35,11 @@ public class BusLine extends Vehicle{
             System.out.println("High price increase"); 
             }
     }
+
+    // public void setDriver(){
+    //     this.driver = new Driver();
+    //     this.driver.
+    // }
 
     public String getLineNr(){
         return this.lineNr;

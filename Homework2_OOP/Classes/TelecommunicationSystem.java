@@ -17,7 +17,7 @@ public class TelecommunicationSystem{
       return this.regulation;
     }
 
-    public String getTechnicalConcepts{
+    public String getTechnicalConcepts(){
       return this.technicalConcepts;
     }
 }

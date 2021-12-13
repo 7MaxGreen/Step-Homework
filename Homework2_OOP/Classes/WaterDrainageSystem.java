@@ -23,7 +23,7 @@ public class WaterDrainageSystem{
         return this.waterQuality;
     }
 
-    public String getYearOfInstallation(){
+    public short getYearOfInstallation(){
         return this.yearOfInstallation;
     }
 }

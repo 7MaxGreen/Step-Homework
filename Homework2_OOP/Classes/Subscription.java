@@ -14,19 +14,19 @@ public class Subscription{
 
     public void setPeriod(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Input the period: ");
+        System.out.println("Input the subscription period: ");
         this.period = sc.nextLine();
     }
 
     public void setPrice(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Input the price: ");
+        System.out.println("Input the subscription price: ");
         this.price = sc.nextFloat();
     }
 
     public void setDiscount(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Input the discount: ");
+        System.out.println("Input the subscription discount: ");
         this.discount = sc.nextByte();
     }
 

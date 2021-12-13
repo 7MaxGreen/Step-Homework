@@ -1,21 +1,19 @@
 
-public class Country { 
-    private String name;
+public class Country extends City{ 
+ 
     private String flag;
     private String capital;
     private String currency;
 
-    public Country(String name, String flag, String capital, String currency){
-        this.name = name;
+    public Country(String flag, String capital, String currency, String name, double population, String council){
+        super( name,  population,  council);
+
         this.flag = flag;
         this.capital = capital;
         this.currency = currency;
 
     }
 
-    public String getName(){
-        return this.name;
-    }
 
     public String getFlag(){
         return this.flag;
@@ -27,6 +25,16 @@ public class Country {
 
     public String getCurrency(){
         return this.currency;
+    }
+
+    public void displayClass(){
+        System.out.println("name "+ super.getName());
+        System.out.println("population "+ super.getPopulation());
+        System.out.println("council "+ super.getCouncil());
+        System.out.println("flag "+ this.flag);
+        System.out.println("capital  "+ this.capital);
+        System.out.println("currency "+ this.currency);
+
     }
     
     public void guessTheCapital(String country){

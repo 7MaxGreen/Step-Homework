@@ -3,36 +3,44 @@ public class App{
 
         //BridgeSystem
         BridgeSystem bridge = new BridgeSystem("Arch", "fiber reinforced polymers", "transportation");
-
+        BridgeSystem bridge2 = new BridgeSystem("Arch", "fiber reinforced polymers", "transportation");
         System.out.println(bridge.getForm());
         System.out.println(bridge.getPorpose());
 
 
         //CANDLE
-         Candle candle = new Candle("purple", "cotton", "cylinder");
-        
-         boolean lighter = true;
-
-         candle.lighted(lighter);
+         Candle candle = new Candle("purple", "cotton", "cylinder", true);
 
          System.out.println(candle.getWaxColor());
          System.out.println(candle.getCandleWick());
+         System.out.println(candle.getForm());
+         System.out.println(candle.getIsLighted());
+
+         candle.lighted();
 
          candle.lightTheCandle("green", "cotton candlewick", "cylinder");
 
-   /*
-         // CAR
+   
+         // CAR ( extends Vehicle )
 
-         Car car = new Car("convertible", "electronic chassis type", true, "double xenon", "ceramic drilled");
+         Car car = new Car("convertible", "electronic chassis type", true, "double xenon", "ceramic drilled", "VW", "B8", "GTE", "Bensin", "DSG AUTOMATIC", true, (short)2016, (short)9 );
 
-         System.out.println(car.getRoofType(), car.getChassisControlType(), car.getESP(), car.getHeadlightType(), car.getDiscType());
+         System.out.println("Roof: " + car.getRoofType());
 
-         // CAR PUBLIC LINE
-         CarPublicLine carPublic = new CarPublicLine("Police", "LA-PD-233");
+         System.out.println("Chassis type: " +car.getChassisControlType());
+         System.out.println("ESP included: " +car.getESP());
+         System.out.println("Headlights: " +car.getHeadlightType());
+         System.out.println("Discs: " +car.getDiscType());
+         car.displaySuperClass();
+
+
+         // CAR PUBLIC LINE (extends Vehicle)
+         CarPublicLine carPublic = new CarPublicLine("Police", "LA-PD-233", "BMW", "3-series", "E90", "DIESEL", " AUTOMATIC", false, (short)2012, (short)0  );
         
          System.out.println(carPublic.getFieldOfActivity());
          System.out.println(carPublic.getLicensePlate());
-   */
+         carPublic.displaySuperClass();
+
         //CITY
         City city = new City("London", 8982000000d , "London councils");
         City city1 = new City("Singapore", 5686000000d, "Singapore national coucil");
@@ -42,11 +50,9 @@ public class App{
         city.maxPopulation(city, city1);
         city.guessTheCountry("Kuala Lampur");
 
-
-        //CITY INFRASTRUCTURE
-        // CityInfrastructure cityInfrastructure = new CityInfrastructure();
-        
-        //CLIENT
+/*
+     
+        //CLIENT (subscriptionType is an attribute of CLASS type)
 
         Client client = new Client();
 
@@ -55,29 +61,41 @@ public class App{
         client.setFrequencyOfVisit();
         client.setSubscription();
 
-        System.out.println(client.getName());
-        System.out.println(client.getSurname());
-        System.out.println(client.getFrequencyOfVisit());
-        //System.out.println(client.getSubscription()); -------------------------------------------
+        System.out.println(" Name: " + client.getName());
+        System.out.println(" Surname: " + client.getSurname());
+        System.out.println(" Frequency: " + client.getFrequencyOfVisit());
+        System.out.println(" Subscription type : " + client.getSubscription().getSubscriptionType()); 
+        System.out.println(" Period : " + client.getSubscription().getPeriod());
+        System.out.println(" Price: " + client.getSubscription().getPrice());
+        System.out.println(" Discount: " + client.getSubscription().getDiscount());
 
+        client.checkMastery();
 
-        //COMPANY
-        Company company = new Company("AUTODOC", "BERLIN 323 GMBH", "233-332-11-2212-33-1", "autodoc@mail.de", "123456789112345678US");
+*/
+        //COMPANY (Conditional constructor)
+        Company company = new Company("AUTODOC", "BERLIN 323 GMBH", "sales", "233-332-11-2212-33-1", "autodoc@mail.de", "123456789112345678US");
         System.out.println("L:" + company.getCin().length());
         
         System.out.println(company.getCin().substring(18, company.getCin().length()));
+
+
+        System.out.println("financial start-up: "  + company.getFinancialStartUp());
         
         company.checkIDNO();
 
-        //COUNTRY
+ 
+        //COUNTRY (extends CITY)
 
-        Country country = new Country("The United Kingdom", "UK", "London", "GB");
+        Country country = new Country("UK", "London", "GBP", "The United Kingdom", 23000000, "London's main Council");
 
         System.out.println(country.getName());
+        System.out.println(country.getPopulation());
+        System.out.println(country.getCouncil());
         System.out.println(country.getFlag());
         System.out.println(country.getCapital());
         System.out.println(country.getCurrency());
 
+/*
        //DRIVER
        Driver driver = new Driver("Alex", "Ferguson", (byte)76, (byte)48, "B, C", "Mainly worked in Manchester area");
 
@@ -86,7 +104,8 @@ public class App{
        System.out.println(driver.getAge());
        System.out.println(driver.getYearsOfExperience());
        System.out.println(driver.getDrivingLicenseType());
-       System.out.println(driver.getWorkHistory());
+       System.out.println(driver.getWorkHistory()); */
+
 
        //GARAGE
        Garage garage = new Garage();
@@ -114,57 +133,52 @@ public class App{
        System.out.println(garden.checkForPlants());
        System.out.println("Garden's perimeter equals to " + garden.perimeterCalculate());
 
-       //GOVERNOR
+       //GOVERNOR (includes an attribute of CLASS type (LawApproval))
        Governor governor = new Governor("Franklin", "Clinton", "Democratic");
 
         System.out.println(governor.getName());
         System.out.println(governor.getSurname());
         System.out.println(governor.getParty());
+        governor.setLawApproval();
+        System.out.println(governor.getLawApproval().getVoteDecision());
+        System.out.println(governor.getLawApproval().getNewLaw());
+        System.out.println(governor.getLawApproval().getConclusion());
 
-        //LAW APPROVAL
-        LawApproval law = new LawApproval(true, "Obey and Pay", "new law has been approved by unanimous voting")
-        System.out.println(law.getVoteDecision());
-        System.out.println(law.getNewLaw());
-        System.out.println(law.getConclusion());
 
-        //GYM
+
+        //GYM -> CLIENT -> SUBSCRIPTION ( includes attributes of CLASS type)
         Gym gym = new Gym();
+
         gym.setName();
         gym.setAddress();
         gym.setMembers();
+
+        gym.setClient(); // -> calls client Obj setters which includes subscription Obj setters;
+       
 
         System.out.println(gym.getName());
         System.out.println(gym.getAddress());
         System.out.println(gym.getMembers());
 
+        System.out.println(gym.getClient().getName());
+        System.out.println(gym.getClient().getSurname());
+        System.out.println(gym.getClient().getFrequencyOfVisit());
+
+        System.out.println(gym.getClient().getSubscription().getSubscriptionType());
+        System.out.println(gym.getClient().getSubscription().getPeriod());
+        System.out.println(gym.getClient().getSubscription().getPrice());
+        System.out.println(gym.getClient().getSubscription().getDiscount());
+
+
         gym.checkSize();
 
-        //CLIENT
-        Client client = new Client();
-        client.setName();
-        client.setSurname();
-        client.setFrequencyOfVisit();
-        //client.setSubscription(); ------------------------------------------------
 
-        client.checkMastery();
-
-        //SUBSCRIPTION
-        Subscription sub = new Subscription();
-        sub.setSubscriptionType();
-        sub.setPeriod();
-        sub.setPrice();
-        sub.setDiscount();
-
-        System.out.println(sub.getSubscriptionType());
-        System.out.println(sub.getPeriod());
-        System.out.println(sub.getPrice());
-        System.out.println(sub.getDiscount());
-
+    
         //HEALTH SERVICES
         HealthServices health = new HealthServices("Hospital", "hospitalization, emergency, surgical, x-ray-radiology, blood, laboratory services", "NY-333 AVENUE");
-        System.out.println(helth.getType());
-        System.out.println(helth.getServices());
-        System.out.println(helth.getAddress());
+        System.out.println(health.getType());
+        System.out.println(health.getServices());
+        System.out.println(health.getAddress());
 
         //TELECOMMUNICATION SYSTEM
         TelecommunicationSystem net = new TelecommunicationSystem("Packet switched networks", "(WAN) protocols, including Frame Relay, X. 25, and TCP/IP", "Packet switching");
@@ -173,19 +187,12 @@ public class App{
         System.out.println(net.getRegulation());
 
         //WATER DRAINAGE SYSTEM
-        WaterDrainageSystem water = new WaterDrainageSystem("Brick Sewer" , "30 million tonnes", "water (99.9%)", "1858");
+        WaterDrainageSystem water = new WaterDrainageSystem("Brick Sewer" , "30 million tonnes", "water (99.9%)", (short)1858);
 
         System.out.println(water.getYearOfInstallation());
         System.out.println(water.getWaterQuality());
         System.out.println(water.getWaterQuantity());
         System.out.println(water.getSewerType());
-
-
-
-
-
-
-
        
     }
 }
