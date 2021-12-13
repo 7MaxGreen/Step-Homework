@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Subscription{
     private String subscriptionType;
     private String period;
@@ -7,27 +5,23 @@ public class Subscription{
     private byte discount;
 
     public void setSubscriptionType(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Input the subscription type: ");
-        this.subscriptionType = sc.nextLine();
+        this.subscriptionType = Display.sc.nextLine();
     }
 
     public void setPeriod(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Input the subscription period: ");
-        this.period = sc.nextLine();
+        this.period = Display.sc.nextLine();
     }
 
     public void setPrice(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Input the subscription price: ");
-        this.price = sc.nextFloat();
+        this.price = Display.sc.nextFloat();
     }
 
     public void setDiscount(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Input the subscription discount: ");
-        this.discount = sc.nextByte();
+        this.discount = Display.sc.nextByte();
     }
 
     public String getSubscriptionType(){
