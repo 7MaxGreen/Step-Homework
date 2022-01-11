@@ -29,9 +29,9 @@ public class ProductManager {
                 } else {
                     System.out.println("Please choose a valid option");
                 }
-                menu.adminMenu();
             }
         }while(MyScanner.input.nextByte() != 1 || MyScanner.input.nextByte() != 2 || MyScanner.input.nextByte() != 3 || MyScanner.input.nextByte() != 4 || MyScanner.input.nextByte() != 5);
+        menu.adminMenu();
     }
 
     public void sum(){
