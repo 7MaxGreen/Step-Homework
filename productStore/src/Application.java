@@ -2,9 +2,10 @@ public class Application {
 
     public static void main(String[] args) {
 
-        ConsoleMenu menu = new ConsoleMenu();
+        ProductManager pm = new ProductManager();
 
-        menu.adminMenu();
+        pm.create();
 
+        ConsoleMenu.adminMenu(pm);
     }
 }
