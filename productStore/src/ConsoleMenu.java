@@ -1,8 +1,6 @@
 public class ConsoleMenu {
 
-    ProductManager pm = new ProductManager();
-
-        public void adminMenu(){
+        public static void adminMenu(ProductManager productManager){
         while(true){
             System.out.println("  \n\n\t\t ******** ADMIN MENU ********* ");
             System.out.println(" \t\t **                         ** ");
@@ -13,12 +11,11 @@ public class ConsoleMenu {
             System.out.println(" \t\t *****************************");
 
             System.out.print("Choose an option: " );
-            byte b = MyScanner.input.nextByte();
 
-            switch (b){
+            switch (MyScanner.input.nextByte()){
 
-                case 1 : pm.create(); pm.display(); break;
-                case 2 : pm.sum(); break;
+                case 1 : productManager.display(); break;
+                case 2 : productManager.sum(); break;
                 case 3 : System.exit(0);
 
                 default :
