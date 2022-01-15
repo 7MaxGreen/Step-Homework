@@ -1,21 +1,12 @@
 package com.step.employeeManager;
-
 import com.step.data.Employee;
-import com.step.employeeManager.menu.ConsoleMenu;
 import com.step.employeeManager.menu.MainMenu;
-import com.step.employeeManager.menu.EditMenu;
-import com.step.employeeManager.menu.SearchMenu;
 
-public class EmployeeManager {
+public class EmployeeManager implements Manageable {
 
     private Employee[] employee = new Employee[100];
-
     private int counter = 0;
-
     private String uInput;
-
-//    private ConsoleMenu menu = new ConsoleMenu();
-
 
 
     public void add() {
@@ -38,11 +29,9 @@ public class EmployeeManager {
             counter++;
 
             System.out.println("Do you want to add another employee? Press[A] to EXIT or any key to confirm");
-
         } while (!MyScanner.input.nextLine().equals("A"));
 
-        MainMenu.adminMenu();
-
+//        MainMenu.adminMenu();
     }
 
     public void read() {
@@ -64,8 +53,9 @@ public class EmployeeManager {
             System.out.println("Profession: " + this.employee[i].getProfession().getProfessionName());
             System.out.println("Start date: " + this.employee[i].getHireDate());
             System.out.println("Finish date: " + this.employee[i].getDismissDate());
-           MainMenu.adminMenu();
+            System.out.println();
         }
+//        MainMenu.adminMenu();
     }
 
 
@@ -76,17 +66,16 @@ public class EmployeeManager {
         if (uInput.equals("E")) {
             MainMenu.adminMenu();
         } else {
-            // System.out.println("c" + counter);
             for (int i = 0; i < counter; i++) {
                 if (employee[i].getIdnp().equals(uInput)) {
                     System.out.println("Update name: ");
                     employee[i].setFirstName(MyScanner.input.nextLine());
                 } else {
                     System.out.println("Invalid IDNP");
-                    EditMenu.editMenu();
+//                    MainMenu.adminMenu();
                 }
             }
-            EditMenu.editMenu();
+//            MainMenu.adminMenu();
         }
     }
 
@@ -94,21 +83,19 @@ public class EmployeeManager {
     public void editSurname() {
         System.out.println("Input employee IDNP in order to edit information or press [E] to return to the main MENU");
         uInput = MyScanner.input.nextLine();
-
         if (uInput.equals("E")) {
             MainMenu.adminMenu();
         } else {
-            // System.out.println("c" + counter);
             for (int i = 0; i < counter; i++) {
                 if (employee[i].getIdnp().equals(uInput)) {
                     System.out.println("Update surname: ");
                     employee[i].setLastName(MyScanner.input.nextLine());
                 } else {
                     System.out.println("Invalid IDNP");
-                    EditMenu.editMenu();
+//                    MainMenu.adminMenu();
                 }
             }
-            EditMenu.editMenu();
+//            MainMenu.adminMenu();
         }
     }
 
@@ -120,17 +107,16 @@ public class EmployeeManager {
         if (uInput.equals("E")) {
           MainMenu.adminMenu();
         } else {
-            // System.out.println("c" + counter);
             for (int i = 0; i < counter; i++) {
                 if (employee[i].getIdnp().equals(uInput)) {
                     System.out.println("Update phone number: ");
                     employee[i].setPhoneNumber(MyScanner.input.nextLine());
                 } else {
                     System.out.println("Invalid IDNP");
-                    EditMenu.editMenu();
+//                     MainMenu.adminMenu();
                 }
             }
-            EditMenu.editMenu();
+//             MainMenu.adminMenu();
         }
     }
 
@@ -141,17 +127,16 @@ public class EmployeeManager {
         if (uInput.equals("E")) {
            MainMenu.adminMenu();
         } else {
-            // System.out.println("c" + counter);
             for (int i = 0; i < counter; i++) {
                 if (employee[i].getIdnp().equals(uInput)) {
                     System.out.println("Update email: ");
                     employee[i].setEmail(MyScanner.input.nextLine());
                 } else {
                     System.out.println("Invalid IDNP");
-                    EditMenu.editMenu();
+//                     MainMenu.adminMenu();
                 }
             }
-            EditMenu.editMenu();
+//             MainMenu.adminMenu();
         }
     }
 
@@ -162,23 +147,20 @@ public class EmployeeManager {
         if (uInput.equals("E")) {
             MainMenu.adminMenu();
         } else {
-            // System.out.println("c" + counter);
             for (int i = 0; i < counter; i++) {
                 if (employee[i].getIdnp().equals(uInput)) {
-
                     System.out.println("Update address: ");
                     String userStreetName = UserInput.userSetStreetName();
                     String userStreetNumber = UserInput.userSetStreetNumber();
                     String userApartNumber = UserInput.userSetApartmentNumber();
                     String userHouseNumber = UserInput.userSetHouseNumber();
                     employee[i].setAddress(userStreetName, userStreetNumber, userApartNumber, userHouseNumber);
-
                 } else {
                     System.out.println("Invalid IDNP");
-                    EditMenu.editMenu();
+                    //                    MainMenu.adminMenu();
                 }
             }
-            EditMenu.editMenu();
+//             MainMenu.adminMenu();
         }
     }
 
@@ -189,17 +171,36 @@ public class EmployeeManager {
         if (uInput.equals("E")) {
             MainMenu.adminMenu();
         } else {
-            // System.out.println("c" + counter);
             for (int i = 0; i < counter; i++) {
                 if (employee[i].getIdnp().equals(uInput)) {
                     System.out.println("Update Department: ");
                     employee[i].setDepartment(MyScanner.input.nextLine());
                 } else {
                     System.out.println("Invalid IDNP");
-                    EditMenu.editMenu();
+                    //                    MainMenu.adminMenu();
                 }
             }
-            EditMenu.editMenu();
+            //            MainMenu.adminMenu();
+        }
+    }
+
+    public void editProfession() {
+        System.out.println("Input employee IDNP in order to edit information or press [E] to return to the main MENU");
+        uInput = MyScanner.input.nextLine();
+
+        if (uInput.equals("E")) {
+            MainMenu.adminMenu();
+        } else {
+            for (int i = 0; i < counter; i++) {
+                if (employee[i].getProfession().getProfessionName().equals(uInput)) {
+                    System.out.println("Update Department: ");
+                    employee[i].setProfession(MyScanner.input.nextLine());
+                } else {
+                    System.out.println("Invalid IDNP");
+//                     MainMenu.adminMenu();
+                }
+            }
+//             MainMenu.adminMenu();
         }
     }
 
@@ -210,17 +211,16 @@ public class EmployeeManager {
         if (uInput.equals("E")) {
             MainMenu.adminMenu();
         } else {
-            // System.out.println("c" + counter);
             for (int i = 0; i < counter; i++) {
                 if (employee[i].getIdnp().equals(uInput)) {
                     System.out.println("Update IDNP: ");
                     employee[i].setIdnp(MyScanner.input.nextLine());
                 } else {
                     System.out.println("Invalid IDNP");
-                    EditMenu.editMenu();
+                    //                    MainMenu.adminMenu();
                 }
             }
-            EditMenu.editMenu();
+//             MainMenu.adminMenu();
         }
     }
 
@@ -231,92 +231,17 @@ public class EmployeeManager {
         if (uInput.equals("E")) {
             MainMenu.adminMenu();
         } else {
-            // System.out.println("c" + counter);
             for (int i = 0; i < counter; i++) {
                 if (employee[i].getIdnp().equals(uInput)) {
                     System.out.println("Input updated salary: ");
                     employee[i].setSalary(MyScanner.input.nextDouble());
                 } else {
                     System.out.println("Invalid IDNP");
-                    EditMenu.editMenu();
+//                     MainMenu.adminMenu();
                 }
             }
-            EditMenu.editMenu();
+//             MainMenu.adminMenu();
         }
-    }
-
-/*
-    public void edit() {
-
-        System.out.println("Input employee IDNP in order to edit information or press [A] to return to the main MENU");
-        String uInput = MyScanner.input.nextLine();
-
-        if (uInput.equals("A")) {
-            MainMenu.adminMenu();
-        } else {
-            System.out.println("c" + counter);
-            for (int i = 0; i < counter; i++) {
-                if (employee[i].getIdnp().equals(uInput)) {
-
-                    while (!MyScanner.input.nextLine().equals("E")) {
-                        System.out.println("Edit first name? Press [Y] to confirm or press double [E] to exit");
-                        if (MyScanner.input.nextLine().equals("Y")) employee[i].setFirstName();
-                    }
-                    ;
-
-                    do {
-                        System.out.println("Edit last name? Press [Y] to confirm or press double [E] to exit");
-                        if (MyScanner.input.nextLine().equals("Y")) employee[i].setLastName();
-
-                    } while (!MyScanner.input.nextLine().equals("E"));
-
-                    do {
-                        System.out.println("Edit idnp? Press [Y] to confirm or press double [E] to exit");
-                        if (MyScanner.input.nextLine().equals("Y")) employee[i].setIdnp();
-
-                    } while (!MyScanner.input.nextLine().equals("E"));
-
-                    do {
-                        System.out.println("Edit phone number? Press [Y] to confirm or press double [E] to exit");
-                        if (MyScanner.input.nextLine().equals("Y")) employee[i].setPhoneNumber();
-
-                    } while (!MyScanner.input.nextLine().equals("E"));
-
-                    do {
-                        System.out.println("Edit email? Press [Y] to confirm or press double [E] to exit");
-                        if (MyScanner.input.nextLine().equals("Y")) employee[i].setEmail();
-
-                    } while (!MyScanner.input.nextLine().equals("E"));
-
-                    do {
-                        System.out.println("Edit salary? Press [Y] to confirm or press double [E] to exit");
-                        if (MyScanner.input.nextLine().equals("Y")) employee[i].setSalary();
-
-                    } while (!MyScanner.input.nextLine().equals("E"));
-
-                    do {
-                        System.out.println("Edit Address? Press [Y] to confirm or press double [E] to exit");
-                        if (MyScanner.input.nextLine().equals("Y")) employee[i].setAddress();
-
-                    } while (!MyScanner.input.nextLine().equals("E"));
-
-                    do {
-                        System.out.println("Edit Department name? Press [Y] to confirm or press double [E] to exit");
-                        if (MyScanner.input.nextLine().equals("Y")) employee[i].setDepartment();
-
-                    } while (!MyScanner.input.nextLine().equals("E"));
-
-                    MainMenu.adminMenu();
-
-                } else {
-                    System.out.println("IDNP does not match with database");
-                }
-            }
-        }
-    }
-*/
-    public void delete() {
-
     }
 
 
@@ -342,15 +267,15 @@ public class EmployeeManager {
                 System.out.println("Finish date: " + employee[i].getDismissDate());
             } else {
                 System.out.println("Invalid option");
-                SearchMenu.findMenu();
+//                 MainMenu.adminMenu();
             }
         }
-        SearchMenu.findMenu();
+//         MainMenu.adminMenu();
     }
 
 
     public void searchSurname(){
-        System.out.print("Search");
+        System.out.print("Search: ");
         String name = MyScanner.input.nextLine();
 
         for(int i=0; i<counter; i++){
@@ -373,14 +298,14 @@ public class EmployeeManager {
             }
             else {
                 System.out.println("Invalid option");
-                SearchMenu.findMenu();
+//                 MainMenu.adminMenu();
             }
         }
-        SearchMenu.findMenu();
+//         MainMenu.adminMenu();
     }
 
     public void searchIDNP(){
-        System.out.print("Search");
+        System.out.print("Search: ");
         String name = MyScanner.input.nextLine();
 
         for(int i=0; i<counter; i++){
@@ -403,14 +328,14 @@ public class EmployeeManager {
             }
             else {
                 System.out.println("Invalid option");
-                SearchMenu.findMenu();
+//                 MainMenu.adminMenu();
             }
         }
-        SearchMenu.findMenu();
+//         MainMenu.adminMenu();
     }
 
     public void searchDepartment(){
-        System.out.print("Search");
+        System.out.print("Search: ");
         String name = MyScanner.input.nextLine();
 
         for(int i=0; i<counter; i++){
@@ -433,14 +358,14 @@ public class EmployeeManager {
             }
             else {
                 System.out.println("Invalid option");
-                SearchMenu.findMenu();
+//                 MainMenu.adminMenu();
             }
         }
-        SearchMenu.findMenu();
+//         MainMenu.adminMenu();
     }
 
     public void searchProfession(){
-        System.out.print("Search");
+        System.out.print("Search: ");
         String name = MyScanner.input.nextLine();
 
         for(int i=0; i<counter; i++){
@@ -463,10 +388,39 @@ public class EmployeeManager {
             }
             else {
                 System.out.println("Invalid option");
-                SearchMenu.findMenu();
+//                 MainMenu.adminMenu();
             }
         }
-        SearchMenu.findMenu();
+//         MainMenu.adminMenu();
+    }
+
+
+    //An array won't properly delete its object, instead using the index it can replace its value with a null value.
+    public void delete() {
+        System.out.println("Input employee IDNP in order to delete him from database");
+        String userInput = MyScanner.input.nextLine();
+
+        for(int i=0; i<counter; i++){
+            if(employee[i].getIdnp().equals(userInput)){
+                System.out.println("Are you sure you want to delete the employee" + userInput + "? Press [Y] to confirm or any key to cancel" );
+                System.out.println("Name" + employee[i].getFirstName());
+                System.out.println("Surname" + employee[i].getLastName());
+                System.out.println("IDNP" + employee[i].getIdnp());
+                userInput = MyScanner.input.nextLine();
+                if(userInput.equalsIgnoreCase("Y")){
+                    employee[i] = null;
+                } else{
+                    MainMenu.adminMenu();
+                }
+            } else
+            {
+                System.out.println("The requested IDNP is not registered in the database. Please, check it again!");
+//                 MainMenu.adminMenu();
+            }
+        }
     }
 }
+
+
+
 

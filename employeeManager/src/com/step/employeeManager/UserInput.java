@@ -1,22 +1,37 @@
 package com.step.employeeManager;
 import com.step.data.Gender;
-import java.util.Locale;
+
 
 public class UserInput {
 
     public static String userSetFirstName() {
         System.out.print("Input first name: ");
-        return MyScanner.input.nextLine();
+        String userInput = MyScanner.input.nextLine();
+        while(userInput.length()<3) {
+            System.out.println("Name should consist of minimum 3 characters");
+            userInput = MyScanner.input.nextLine();
+        }
+        return userInput;
     }
 
     public static String userSetLastName() {
         System.out.print("Input last name: ");
-        return MyScanner.input.nextLine();
+        String userInput = MyScanner.input.nextLine();
+        while(userInput.length()<3) {
+            System.out.println("Surname should consist of minimum 3 characters");
+            userInput = MyScanner.input.nextLine();
+        }
+        return userInput;
     }
 
     public static String userSetIdnp() {
-        System.out.print("Input idnp: ");
-        return MyScanner.input.nextLine();
+        System.out.print("Input IDNP: ");
+        String userInput = MyScanner.input.nextLine();
+        while(userInput.length()!=13) {
+            System.out.println("IDNP should consist of 13 characters");
+            userInput = MyScanner.input.nextLine();
+        }
+        return userInput;
     }
 
     public static Double userSetSalary() {
@@ -30,13 +45,23 @@ public class UserInput {
     }
 
     public static String userSetEmail() {
-        System.out.print("Input email: ");
-        return MyScanner.input.nextLine();
+        System.out.print("Input email address: ");
+        String userInput = MyScanner.input.nextLine();
+        while(!userInput.contains("@")) {
+            System.out.println("Email address should contain the /@/ symbol");
+            userInput = MyScanner.input.nextLine();
+        }
+        return userInput;
     }
 
     public static String userSetStreetName() {
         System.out.print("Input street name: ");
-        return MyScanner.input.nextLine();
+        String userInput = MyScanner.input.nextLine();
+        while(userInput.length()<3) {
+            System.out.println("Input must contain a minimum of 3 characters");
+            userInput = MyScanner.input.nextLine();
+        }
+        return userInput;
     }
 
     public static String userSetStreetNumber() {
@@ -56,12 +81,22 @@ public class UserInput {
 
     public static String userSetDepartment(){
         System.out.print("Input department name: ");
-        return MyScanner.input.nextLine();
+        String userInput = MyScanner.input.nextLine();
+        while(userInput.length()<3) {
+            System.out.println("Input must contain a minimum of 3 characters");
+            userInput = MyScanner.input.nextLine();
+        }
+        return userInput;
     }
 
     public static String setProfessionName() {
         System.out.print("Input function: ");
-        return MyScanner.input.nextLine();
+        String userInput = MyScanner.input.nextLine();
+        while(userInput.length()<5) {
+            System.out.println("Input must contain a minimum of 5 characters");
+            userInput = MyScanner.input.nextLine();
+        }
+        return userInput;
     }
 
     public static String userSetHireDate() {
@@ -75,19 +110,21 @@ public class UserInput {
     }
 
     public static Gender userSetGender(){
-        Gender gender = Gender.MALE;
+        Gender gender = Gender.NOT_DEFINED;
 
         System.out.println("Select the gender (input male or female)");
-        do{
-            if (MyScanner.input.nextLine().equalsIgnoreCase("male")) {
+        String userInput = MyScanner.input.nextLine();
+
+        while(!userInput.equals("male") || !userInput.equals("female")){
+            if (userInput.equalsIgnoreCase("male")) {
                 return gender.MALE;
-            } else if(MyScanner.input.nextLine().equalsIgnoreCase("female")){
+            } else if(userInput.equalsIgnoreCase("female")){
                 return gender.FEMALE;
             } else {
                 System.out.println("Please input MALE or FEMALE");
+                userInput = MyScanner.input.nextLine();
             }
-        }while(!MyScanner.input.nextLine().equals("male") || !MyScanner.input.nextLine().equals("female"));
-
+        };
         return gender;
     }
 }

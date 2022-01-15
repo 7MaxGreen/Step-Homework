@@ -3,6 +3,8 @@ package com.step.employeeManager.menu;
 public enum MenuOptions {
     INSERT,
     SHOW,
+    DELETE,
+    EXIT,
     BY_NAME,
     BY_SURNAME,
     BY_PROFESSION,
@@ -11,6 +13,7 @@ public enum MenuOptions {
     EDIT_SALARY,
     EDIT_ADDRESS,
     EDIT_DEPARTMENT,
+    EDIT_PROFESSION,
     EDIT_PHONE,
     EDIT_EMAIL,
     EDIT_NAME,

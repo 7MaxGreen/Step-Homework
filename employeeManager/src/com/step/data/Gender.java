@@ -2,5 +2,6 @@ package com.step.data;
 
 public enum Gender {
     MALE,
-    FEMALE
+    FEMALE,
+    NOT_DEFINED
 }
