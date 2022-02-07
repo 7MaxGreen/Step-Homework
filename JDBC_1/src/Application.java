@@ -12,17 +12,17 @@ public class Application {
 //        dao.create(new Employee("Daniel", "Day-Lewis"));
 //        dao.create(new Employee("Samuel", "L.Jackson"));
 //        dao.create(new Employee("Benicio", "Del Toro"));
+          dao.createWithResources(new Employee("Christian", "Bale"));
 
         //read
-        for(Employee emp : dao.readAll()){
+        for(Employee emp : dao.readWithResources()){
             System.out.println(emp);
         };
 
         //update
-        dao.update(3,"Negreanu");
-
+        dao.updateWithResources(3,"Negreanu");
 
         //delete
-        dao.delete(10);
+        dao.deleteWithResources(10);
     }
 }

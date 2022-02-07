@@ -1,7 +1,7 @@
 
 public class Employee {
 
-    private int id;
+    private Integer id;
     private String name;
     private String surname;
 
@@ -14,6 +14,10 @@ public class Employee {
         this.id = id;
         this.name = name;
         this.surname = surname;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public int getId() {
