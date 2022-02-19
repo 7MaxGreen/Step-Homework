@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="682.0" prefWidth="461.0" style="-fx-background-color: #161a1d; -fx-background-radius: 20px; -fx-border-width: 0px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <TextField fx:id="Display" alignment="CENTER_RIGHT" editable="false" layoutX="11.0" layoutY="31.0" prefHeight="164.0" prefWidth="440.0" style="-fx-background-color: #161a1d; -fx-text-fill: white;">
+         <font>
+            <Font name="System Bold" size="72.0" />
+         </font>
+      </TextField>
+      <Button fx:id="C" layoutX="11.0" layoutY="223.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ca6702; -fx-text-fill: white;" text="C">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="PlusMinus" layoutX="101.0" layoutY="223.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ee9b00; -fx-text-fill: white;" text="+/-">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Percent" layoutX="191.0" layoutY="223.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ee9b00; -fx-text-fill: white;" text="\%">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="division" layoutX="281.0" layoutY="223.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ee9b00; -fx-text-fill: white;" text="/">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Rad" layoutX="371.0" layoutY="223.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ca6702; -fx-text-fill: white;" text="Rad">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Seven" layoutX="11.0" layoutY="313.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="7">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Eight" layoutX="101.0" layoutY="313.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="8">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Nine" layoutX="191.0" layoutY="313.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="9">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Multiplication" layoutX="281.0" layoutY="313.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ee9b00; -fx-text-fill: white;" text="x">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Log" layoutX="371.0" layoutY="313.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ca6702; -fx-text-fill: white;" text="Log">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Four" layoutX="11.0" layoutY="403.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="4">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Five" layoutX="101.0" layoutY="403.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="5">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Six" layoutX="191.0" layoutY="403.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="6">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Subtraction" layoutX="281.0" layoutY="403.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ee9b00; -fx-text-fill: white;" text="-">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Sin" layoutX="371.0" layoutY="403.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ca6702; -fx-text-fill: white;" text="Sin">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="One" layoutX="11.0" layoutY="493.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="1">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Two" layoutX="101.0" layoutY="493.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="2">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Three" layoutX="191.0" layoutY="493.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="3">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Addition" layoutX="281.0" layoutY="493.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ee9b00; -fx-text-fill: white;" text="+">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Cos" layoutX="371.0" layoutY="493.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #ca6702; -fx-text-fill: white;" text="Cos">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Zero" layoutX="11.0" layoutY="583.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="0">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Point" layoutX="101.0" layoutY="583.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text=".">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Del" layoutX="191.0" layoutY="583.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50; -fx-background-color: #6b705c; -fx-text-fill: white;" text="del">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Equal" layoutX="281.0" layoutY="583.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#ButtonPush" prefHeight="80.0" prefWidth="169.0" style="-fx-background-radius: 50; -fx-background-color: linear-gradient(to right, #ca6702, #ee9b00); -fx-text-fill: white;" text="=">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
