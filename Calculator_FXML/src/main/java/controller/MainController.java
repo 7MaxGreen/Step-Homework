@@ -84,9 +84,13 @@ public class MainController {
     private Button Equal;
 
     private Double result;
-    private Double result2;
     private int mathOp;
     private Double answer;
+
+    void parseDouble(){
+        result = Double.parseDouble(Display.getText());
+        Display.setText("");
+    }
 
 
     @FXML
@@ -105,52 +109,46 @@ public class MainController {
         else if(event.getSource() == Del) Display.setText(Display.getText().substring(0,Display.getText().length()-1));
 
         else if(event.getSource() == Addition) {
-            result = Double.parseDouble(Display.getText());
+            parseDouble();
             mathOp = 1;
-            Display.setText("");
+
             }
         else if(event.getSource() == Subtraction) {
-            result = Double.parseDouble(Display.getText());
+            parseDouble();
             mathOp = 2;
-            Display.setText("");
         }
         else if(event.getSource() == Multiplication) {
-            result = Double.parseDouble(Display.getText());
+            parseDouble();
             mathOp = 3;
-            Display.setText("");
         }
         else if(event.getSource() == division) {
-            result = Double.parseDouble(Display.getText());
+            parseDouble();
             mathOp = 4;
-            Display.setText("");
         }
         else if(event.getSource() == Rad) {
-            result = Double.parseDouble(Display.getText());
+            parseDouble();
             mathOp = 5;
-            Display.setText("");
         }
         else if(event.getSource() == Log) {
-            result = Double.parseDouble(Display.getText());
+            parseDouble();
             mathOp = 6;
-            Display.setText("");
         }
         else if(event.getSource() == Sin) {
-            result = Double.parseDouble(Display.getText());
+            parseDouble();
             mathOp = 7;
-            Display.setText("");
         }
         else if(event.getSource() == Cos) {
-            result = Double.parseDouble(Display.getText());
+            parseDouble();
             mathOp = 8;
-            Display.setText("");
         }
         else if(event.getSource() == Percent) {
-            result = Double.parseDouble(Display.getText());
+            parseDouble();
             mathOp = 9;
-            Display.setText("");
         }
 
         else if(event.getSource() == Equal) {
+
+             Double result2;
              result2 = Double.parseDouble(Display.getText());
             switch(mathOp){
                 case 1:  answer = result+result2; Display.setText(String.valueOf(answer)); break;
@@ -175,7 +173,6 @@ public class MainController {
                          catch(Exception e){Display.setText("Error");}
                          Display.setText(String.format("%.5f", answer));
                          break;
-
             }
         }
         else if(event.getSource() == C) Display.setText("");
@@ -192,9 +189,7 @@ public class MainController {
             }else if(!Display.getText().contains("-")){
                 Display.setText("-" + Display.getText());}
         }
-
       }
-
     }
 
 

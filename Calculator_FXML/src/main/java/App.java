@@ -1,10 +1,16 @@
-import handler.KeyboardHandler;
+
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import java.util.Optional;
 
 
 public class App extends Application {
@@ -13,13 +19,22 @@ public class App extends Application {
 
         primaryStage.setTitle("Calculator_FXML");
 
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(App.class.getResource("view.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("view.fxml"));
+        primaryStage.setScene(new Scene(pane));
 
-        AnchorPane pane = fxmlLoader.load();
-        Scene scene= new Scene(pane);
-        primaryStage.setScene(scene);
-        primaryStage.addEventHandler(KeyEvent.KEY_PRESSED, new KeyboardHandler());
+        primaryStage.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+
+                if(event.getCode() == KeyCode.ESCAPE) {
+
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to quit the application?");
+                    alert.setTitle("Exit confirmation");
+                    Optional<ButtonType> optionalBtn = alert.showAndWait();
+                    if(optionalBtn.get() == ButtonType.OK){System.exit(0);}
+                }
+            }
+        });
         primaryStage.show();
     }
 }
