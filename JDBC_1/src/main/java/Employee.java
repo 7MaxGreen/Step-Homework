@@ -1,9 +1,15 @@
+import java.util.Date;
 
 public class Employee {
 
     private Integer id;
     private String name;
     private String surname;
+    private Date birthDate;
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
 
     public Employee(String name, String surname) {
         this.name = name;
