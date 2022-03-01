@@ -10,11 +10,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class Main extends Application {
@@ -32,27 +27,15 @@ public class Main extends Application {
             }
         });
 
+        stage.show();
+
         EmployeeDao dao = new EmployeeDao();
-        LocalDate.of(2033, 11, 07);
-        //save
-//        dao.create(new Employee("Al", "Pacino"));
-//        dao.create(new Employee("Morgan", "Freeman"));
-//        dao.create(new Employee("Daniel", "Day-Lewis"));
-//        dao.create(new Employee("Samuel", "L.Jackson"));
-//        dao.create(new Employee("Benicio", "Del Toro"));
-        dao.createWithResources(new Employee(33, "Christian", "Bale"));
+
 
         //read
         for(Employee emp : dao.readWithResources()){
             System.out.println(emp);
         };
 
-        //update
-//        dao.updateWithResources(3,"Negreanu", "Daniel");
-
-        //delete
-        dao.deleteWithResources(10);
-
-        stage.show();
     }
 }

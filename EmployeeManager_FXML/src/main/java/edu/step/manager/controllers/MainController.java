@@ -137,13 +137,17 @@ public class MainController implements Initializable {
                         }
                     }
                 }
-//                else if(change.wasUpdated()){
-//                    for (int i = change.getFrom(); i < change.getTo(); i++) {
-//                        System.out.println("Updated");
-//                        System.out.println(employeeData.get(i));
-//                        dao.updateWithResources(employeeData.get(i),);
-//                    }
-//                }
+                else if(change.wasUpdated()){
+                    for (int i = change.getFrom(); i < change.getTo(); i++) {
+                        System.out.println("Updated");
+                        System.out.println(employeeData.get(i));
+                        try {
+                            dao.updateWithResources(employeeData.get(i));
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
                 else if(change.wasRemoved()){
                     for(Employee emp: change.getRemoved()) {
                         System.out.println("removed: " + emp);

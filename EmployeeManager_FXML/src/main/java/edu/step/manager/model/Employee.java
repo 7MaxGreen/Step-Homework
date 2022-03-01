@@ -10,6 +10,19 @@ public class Employee {
     private StringProperty name;
     private StringProperty surname;
     private ObjectProperty<LocalDate> birthdate;
+    private ObjectProperty<Department> departmentObjectProperty;
+    private ObjectProperty<Profession> professionObjectProperty;
+    private ObjectProperty<Address> addressObjectProperty;
+
+    public Employee(Integer id, String name, String surname, LocalDate birthdate, Department departmentObjectProperty, Profession professionObjectProperty, Address addressObjectProperty) {
+        this.id = new SimpleIntegerProperty(id);
+        this.name = new SimpleStringProperty(name);
+        this.surname = new SimpleStringProperty(surname);
+        this.birthdate = new SimpleObjectProperty<LocalDate>(birthdate);
+        this.departmentObjectProperty = new SimpleObjectProperty<Department>(departmentObjectProperty);
+        this.professionObjectProperty = new SimpleObjectProperty<Profession>(professionObjectProperty);
+        this.addressObjectProperty = new SimpleObjectProperty<Address>(addressObjectProperty);
+    }
 
     public Employee(Integer id, String name, LocalDate birthdate) {
         this.id = new SimpleIntegerProperty(id);
@@ -22,6 +35,44 @@ public class Employee {
         this.name = new SimpleStringProperty(name) ;
         this.surname = new SimpleStringProperty(surname);
     }
+
+    public Department getDepartmentObjectProperty() {
+        return departmentObjectProperty.get();
+    }
+
+    public ObjectProperty<Department> departmentObjectPropertyProperty() {
+        return departmentObjectProperty;
+    }
+
+    public void setDepartmentObjectProperty(Department departmentObjectProperty) {
+        this.departmentObjectProperty.set(departmentObjectProperty);
+    }
+
+    public Profession getProfessionObjectProperty() {
+        return professionObjectProperty.get();
+    }
+
+    public ObjectProperty<Profession> professionObjectPropertyProperty() {
+        return professionObjectProperty;
+    }
+
+    public void setProfessionObjectProperty(Profession professionObjectProperty) {
+        this.professionObjectProperty.set(professionObjectProperty);
+    }
+
+    public Address getAddressObjectProperty() {
+        return addressObjectProperty.get();
+    }
+
+    public ObjectProperty<Address> addressObjectPropertyProperty() {
+        return addressObjectProperty;
+    }
+
+    public void setAddressObjectProperty(Address addressObjectProperty) {
+        this.addressObjectProperty.set(addressObjectProperty);
+    }
+
+
 
     public String getSurname() {
         return surname.get();

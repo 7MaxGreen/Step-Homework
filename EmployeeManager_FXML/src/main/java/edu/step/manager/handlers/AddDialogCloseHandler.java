@@ -6,6 +6,6 @@ import javafx.stage.WindowEvent;
 public class AddDialogCloseHandler implements EventHandler<WindowEvent> {
     @Override
     public void handle(WindowEvent event) {
-        System.out.println("Esti sigur ca vrei sa inchizi aplicatia");
+        System.out.println("Are you sure you want to quit this application");
     }
 }

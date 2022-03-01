@@ -63,22 +63,22 @@ public class EmployeeDao {
     }
 
 
-//    public void updateWithResources(int id, String surname, String name) throws SQLException{
-//
-//        String update = "UPDATE app.employee SET surname = ?, name = ? WHERE id = ?";
-//        try(Connection connection = getConnection();
-//            PreparedStatement statement = connection.prepareStatement(update)){
-//            statement.setString(1, surname);
-//            statement.setString(2, name);
-//            statement.setInt(3, id);
-//
-//            int row = statement.executeUpdate(); // ( INSERT, UPDATE, DELETE);
-//
-//            if(row == 0){
-//                System.out.println("Error: " + row + " rows were updated" );
-//            }
-//        }
-//    }
+    public void updateWithResources(Employee emp) throws SQLException{
+
+        String update = "UPDATE app.employee SET surname = ?, name = ? WHERE id = ?";
+        try(Connection connection = getConnection();
+            PreparedStatement statement = connection.prepareStatement(update)){
+            statement.setString(1, emp.getSurname());
+            statement.setString(2, emp.getName());
+            statement.setInt(3, emp.getId());
+
+            int row = statement.executeUpdate(); // ( INSERT, UPDATE, DELETE);
+
+            if(row == 0){
+                System.out.println("Error: " + row + " rows were updated" );
+            }
+        }
+    }
 
 
     public void deleteWithResources(int id) throws SQLException{

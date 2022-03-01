@@ -30,13 +30,17 @@ public class TableViewChangeListener implements ListChangeListener<Employee> {
                     }
                 }
             }
-//            else if(change.wasUpdated()){
-//                for (int i = change.getFrom(); i < change.getTo(); i++) {
-//                    System.out.println("Updated");
-//                    System.out.println(list.get(i));
-//                    dao.updateWithResources(list.get(i));
-//                }
-//            }
+            else if(change.wasUpdated()){
+                for (int i = change.getFrom(); i < change.getTo(); i++) {
+                    System.out.println("Updated");
+                    System.out.println(list.get(i));
+                    try {
+                        dao.updateWithResources(list.get(i));
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
             else if(change.wasRemoved()){
                 for(Employee emp: change.getRemoved()) {
                     System.out.println("removed: " + emp);
