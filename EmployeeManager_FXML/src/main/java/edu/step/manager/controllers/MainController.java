@@ -43,8 +43,25 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<Employee, String> nameColumn;
 
+    private TableColumn<Employee, String> surnameColumn;
+
     @FXML
     private TableColumn<Employee, LocalDate> birthdateColumn;
+
+    @FXML
+    private TableColumn<?, ?> departmentColumn;
+
+    @FXML
+    private TableColumn<?, ?> functionColumn;
+
+    @FXML
+    private TableColumn<?, ?> addressColumn;
+
+    @FXML
+    private TableColumn<?, ?> genderColumn;
+
+    @FXML
+    private TableColumn<?, ?> idnpColumn;
 
     private EmployeeDao dao = new EmployeeDao();
 

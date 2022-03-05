@@ -13,8 +13,34 @@ public class Employee {
     private ObjectProperty<Department> departmentObjectProperty;
     private ObjectProperty<Profession> professionObjectProperty;
     private ObjectProperty<Address> addressObjectProperty;
+    private ObjectProperty<Gender> gender;
+    private StringProperty idnp;
 
-    public Employee(Integer id, String name, String surname, LocalDate birthdate, Department departmentObjectProperty, Profession professionObjectProperty, Address addressObjectProperty) {
+    public Gender getGender() {
+        return gender.get();
+    }
+
+    public ObjectProperty<Gender> genderProperty() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender.set(gender);
+    }
+
+    public String getIdnp() {
+        return idnp.get();
+    }
+
+    public StringProperty idnpProperty() {
+        return idnp;
+    }
+
+    public void setIdnp(String idnp) {
+        this.idnp.set(idnp);
+    }
+
+    public Employee(Integer id, String name, String surname, LocalDate birthdate, Department departmentObjectProperty, Profession professionObjectProperty, Address addressObjectProperty, Gender gender, String idnp) {
         this.id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);
         this.surname = new SimpleStringProperty(surname);
@@ -22,19 +48,11 @@ public class Employee {
         this.departmentObjectProperty = new SimpleObjectProperty<Department>(departmentObjectProperty);
         this.professionObjectProperty = new SimpleObjectProperty<Profession>(professionObjectProperty);
         this.addressObjectProperty = new SimpleObjectProperty<Address>(addressObjectProperty);
+        this.gender = new SimpleObjectProperty<Gender>(gender);
+        this.idnp = new SimpleStringProperty(idnp);
     }
 
-    public Employee(Integer id, String name, LocalDate birthdate) {
-        this.id = new SimpleIntegerProperty(id);
-        this.name = new SimpleStringProperty(name);
-        this.birthdate = new SimpleObjectProperty<LocalDate>(birthdate);
-    }
 
-    public Employee(Integer id, String name, String surname) {
-        this.id = new SimpleIntegerProperty(id);
-        this.name = new SimpleStringProperty(name) ;
-        this.surname = new SimpleStringProperty(surname);
-    }
 
     public Department getDepartmentObjectProperty() {
         return departmentObjectProperty.get();

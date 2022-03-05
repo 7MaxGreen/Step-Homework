@@ -39,7 +39,9 @@ public class EditController {
 
     @FXML
     void save(ActionEvent event) {
-        this.data = new Employee(Integer.parseInt(idTextField.getText()), nameTextField.getText(), birthdatePicker.getValue());
+        this.data = new Employee(Integer.parseInt(idTextField.getText()),
+                nameTextField.getText(),
+                birthdatePicker.getValue());
         closeWindow(event);
     }
 
