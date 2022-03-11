@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Employee {
+public class Employee{
 
     private String name;
     private Integer salary;
@@ -45,4 +45,5 @@ public class Employee {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
 }
