@@ -4,7 +4,7 @@ import edu.step.manager.dao.EmployeeDao;
 import edu.step.manager.handlers.AddDialogCloseHandler;
 import edu.step.manager.handlers.TableViewCallback;
 import edu.step.manager.handlers.TableViewChangeListener;
-import edu.step.manager.model.Employee;
+import edu.step.manager.model.*;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -43,31 +43,31 @@ public class MainController implements Initializable {
     @FXML
     private TableColumn<Employee, String> nameColumn;
 
+    @FXML
     private TableColumn<Employee, String> surnameColumn;
 
     @FXML
     private TableColumn<Employee, LocalDate> birthdateColumn;
 
     @FXML
-    private TableColumn<?, ?> departmentColumn;
+    private TableColumn<Department, String> departmentColumn;
 
     @FXML
-    private TableColumn<?, ?> functionColumn;
+    private TableColumn<Profession, String> functionColumn;
 
     @FXML
-    private TableColumn<?, ?> addressColumn;
+    private TableColumn<Address, String> addressColumn;
 
     @FXML
-    private TableColumn<?, ?> genderColumn;
+    private TableColumn<Gender, Enum> genderColumn;
 
     @FXML
-    private TableColumn<?, ?> idnpColumn;
+    private TableColumn<Employee, String> idnpColumn;
 
     private EmployeeDao dao = new EmployeeDao();
 
     private final ObservableList<Employee> employeeData = FXCollections.observableArrayList(
-            new TableViewCallback()
-    );
+            new TableViewCallback());
 
     @FXML
     void openAddDialog(ActionEvent event) throws IOException, SQLException {
@@ -79,7 +79,7 @@ public class MainController implements Initializable {
         Stage stage = new Stage(StageStyle.DECORATED);
         stage.setScene(scene);
         stage.setOnCloseRequest(ev -> {
-            System.out.println("Esti sigur ca vrei sa inchizi aplicatia");
+            System.out.println("Are you sure you want to quit the application?");
         });
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.showAndWait();
@@ -119,7 +119,13 @@ public class MainController implements Initializable {
             stage.showAndWait();
 
             this.employeeData.get(selectedRow).setName(editController.getData().getName());
+            this.employeeData.get(selectedRow).setSurname(editController.getData().getSurname());
             this.employeeData.get(selectedRow).setBirthdate(editController.getData().getBirthdate());
+            this.employeeData.get(selectedRow).setIdnp(editController.getData().getIdnp());
+            this.employeeData.get(selectedRow).setAddressObjectProperty(editController.getData().getAddressObjectProperty());
+            this.employeeData.get(selectedRow).setGender(editController.getData().getGender());
+            this.employeeData.get(selectedRow).setDepartmentObjectProperty(editController.getData().getDepartmentObjectProperty());
+            this.employeeData.get(selectedRow).setProfessionObjectProperty(editController.getData().getProfessionObjectProperty());
         }
 
     }
@@ -136,7 +142,13 @@ public class MainController implements Initializable {
         employeeData.addAll(emps);
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        surnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
         birthdateColumn.setCellValueFactory(new PropertyValueFactory<>("birthdate"));
+        idnpColumn.setCellValueFactory(new PropertyValueFactory<>("idnp"));
+        departmentColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
+        addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
+        functionColumn.setCellValueFactory(new PropertyValueFactory<>("profession"));
+        genderColumn.setCellValueFactory(new PropertyValueFactory<>("gender"));
 
         this.employeeData.addAll(emps);
         tableView.setItems(employeeData);

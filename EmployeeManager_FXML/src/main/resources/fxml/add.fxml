@@ -93,6 +93,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="nameTextField9" layoutX="176.0" layoutY="435.0" />
+      <TextField fx:id="idnpTextField" layoutX="176.0" layoutY="435.0" />
    </children>
 </AnchorPane>

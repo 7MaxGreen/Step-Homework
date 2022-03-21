@@ -16,29 +16,6 @@ public class Employee {
     private ObjectProperty<Gender> gender;
     private StringProperty idnp;
 
-    public Gender getGender() {
-        return gender.get();
-    }
-
-    public ObjectProperty<Gender> genderProperty() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender.set(gender);
-    }
-
-    public String getIdnp() {
-        return idnp.get();
-    }
-
-    public StringProperty idnpProperty() {
-        return idnp;
-    }
-
-    public void setIdnp(String idnp) {
-        this.idnp.set(idnp);
-    }
 
     public Employee(Integer id, String name, String surname, LocalDate birthdate, Department departmentObjectProperty, Profession professionObjectProperty, Address addressObjectProperty, Gender gender, String idnp) {
         this.id = new SimpleIntegerProperty(id);
@@ -52,6 +29,30 @@ public class Employee {
         this.idnp = new SimpleStringProperty(idnp);
     }
 
+    public Gender getGender() {
+        return gender.get();
+    }
+
+    public ObjectProperty<Gender> genderProperty() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender.set(gender);
+    }
+
+
+    public String getIdnp() {
+        return idnp.get();
+    }
+
+    public StringProperty idnpProperty() {
+        return idnp;
+    }
+
+    public void setIdnp(String idnp) {
+        this.idnp.set(idnp);
+    }
 
 
     public Department getDepartmentObjectProperty() {
@@ -66,6 +67,7 @@ public class Employee {
         this.departmentObjectProperty.set(departmentObjectProperty);
     }
 
+
     public Profession getProfessionObjectProperty() {
         return professionObjectProperty.get();
     }
@@ -77,6 +79,7 @@ public class Employee {
     public void setProfessionObjectProperty(Profession professionObjectProperty) {
         this.professionObjectProperty.set(professionObjectProperty);
     }
+
 
     public Address getAddressObjectProperty() {
         return addressObjectProperty.get();
@@ -91,7 +94,6 @@ public class Employee {
     }
 
 
-
     public String getSurname() {
         return surname.get();
     }
@@ -103,6 +105,7 @@ public class Employee {
     public void setSurname(String surname) {
         this.surname.set(surname);
     }
+
 
     public int getId() {
         return id.get();
@@ -116,6 +119,7 @@ public class Employee {
         this.id.set(id);
     }
 
+
     public String getName() {
         return name.get();
     }
@@ -128,6 +132,7 @@ public class Employee {
         this.name.set(name);
     }
 
+
     public LocalDate getBirthdate() {
         return birthdate.get();
     }
@@ -139,6 +144,7 @@ public class Employee {
     public void setBirthdate(LocalDate birthdate) {
         this.birthdate.set(birthdate);
     }
+
 
     @Override
     public String toString() {

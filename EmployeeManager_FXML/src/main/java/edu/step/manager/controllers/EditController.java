@@ -1,6 +1,6 @@
 package edu.step.manager.controllers;
 
-import edu.step.manager.model.Employee;
+import edu.step.manager.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -8,7 +8,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.time.LocalDate;
+
 public class EditController {
+
 
     @FXML
     private TextField idTextField;
@@ -19,13 +22,50 @@ public class EditController {
     @FXML
     private DatePicker birthdatePicker;
 
+    @FXML
+    private TextField surnameTextField;
+
+    @FXML
+    private TextField departmentTextField;
+
+    @FXML
+    private TextField functionTextField;
+
+    @FXML
+    private TextField genderTextField;
+
+    @FXML
+    private TextField streetNameTextField;
+
+    @FXML
+    private TextField streetNumberTextField;
+
+    @FXML
+    private TextField houseNumberTextField;
+
+    @FXML
+    private TextField apartNumberTextField;
+
+    @FXML
+    private TextField idnpTextField;
+
     private Employee data;
 
     public void setData(Employee data) {
         this.data = data;
         idTextField.setText(String.valueOf(data.getId()));
         nameTextField.setText(data.getName());
+        surnameTextField.setText(data.getSurname());
+        idnpTextField.setText(data.getIdnp());
         birthdatePicker.setValue(data.getBirthdate());
+        departmentTextField.setText(data.getDepartmentObjectProperty().getDepartmentName());
+        functionTextField.setText(data.getProfessionObjectProperty().getProfessionName());
+        genderTextField.setText(data.getGender().toString());
+        streetNameTextField.setText(data.getAddressObjectProperty().getStreetName());
+        streetNumberTextField.setText(String.valueOf(data.getAddressObjectProperty().getStreetNumber()));
+        houseNumberTextField.setText(String.valueOf(data.getAddressObjectProperty().getHouseNumber()));
+        apartNumberTextField.setText(String.valueOf(data.getAddressObjectProperty().getApartmentNumber()));
+
     }
 
     public Employee getData() {
@@ -39,9 +79,24 @@ public class EditController {
 
     @FXML
     void save(ActionEvent event) {
-        this.data = new Employee(Integer.parseInt(idTextField.getText()),
+//        Integer id, String name, String surname, LocalDate birthdate, Department departmentObjectProperty, Profession
+//        professionObjectProperty, Address addressObjectProperty, Gender gender, String idnp
+
+        this.data = new Employee(
+                Integer.parseInt(idTextField.getText()),
                 nameTextField.getText(),
-                birthdatePicker.getValue());
+                surnameTextField.getText(),
+                departmentTextField.getText(),
+                functionTextField.getText(),
+                birthdatePicker.getValue(),
+                streetNameTextField.getText(),
+                Integer.parseInt(streetNumberTextField.getText()),
+                Integer.parseInt(houseNumberTextField.getText()),
+                Integer.parseInt(apartNumberTextField.getText()),
+                genderTextField.getText(),
+                idnpTextField.getText()
+                );
+
         closeWindow(event);
     }
 
