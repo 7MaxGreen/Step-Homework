@@ -23,15 +23,15 @@ public class EmployeeDao {
         try(Connection connection = getConnection();
             PreparedStatement statement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS); ){
 
-            statement.setString(1, emp.getName());
-            statement.setString(2, emp.getSurname());
-            statement.setObject(3, emp.getBirthdate());
-            statement.setObject(4, emp.getGender());
-            statement.setString(5,emp.getIdnp());
-            statement.setObject(6,emp.getDepartmentObjectProperty().getDepartmentName());
-            statement.setObject(7,emp.getProfessionObjectProperty().getProfessionName());
-            statement.setObject(8,emp.getAddressObjectProperty().getStreetName());
-            statement.setObject(9, emp.getAddressObjectProperty().getStreetNumber());
+            statement.setString(1,  emp.getName());
+            statement.setString(2,  emp.getSurname());
+            statement.setObject(3,  emp.getBirthdate());
+            statement.setObject(4,  emp.getGender());
+            statement.setString(5,  emp.getIdnp());
+            statement.setObject(6,  emp.getDepartmentObjectProperty().getDepartmentName());
+            statement.setObject(7,  emp.getProfessionObjectProperty().getProfessionName());
+            statement.setObject(8,  emp.getAddressObjectProperty().getStreetName());
+            statement.setObject(9,  emp.getAddressObjectProperty().getStreetNumber());
             statement.setObject(10, emp.getAddressObjectProperty().getHouseNumber());
             statement.setObject(11, emp.getAddressObjectProperty().getApartmentNumber());
 

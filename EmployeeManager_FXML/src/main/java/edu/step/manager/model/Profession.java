@@ -7,6 +7,10 @@ public class Profession {
     private StringProperty professionName;
     private StringProperty skillLevel;
 
+    public Profession(String professionName){
+        this.professionName = new SimpleStringProperty(professionName);
+    }
+
     public Profession(String professionName, String skillLevel) {
         this.professionName = new SimpleStringProperty(professionName);
         this.skillLevel = new SimpleStringProperty(skillLevel);

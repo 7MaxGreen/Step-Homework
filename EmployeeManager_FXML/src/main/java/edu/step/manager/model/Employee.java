@@ -29,6 +29,7 @@ public class Employee {
         this.idnp = new SimpleStringProperty(idnp);
     }
 
+
     public Gender getGender() {
         return gender.get();
     }

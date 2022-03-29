@@ -1,8 +1,6 @@
 package edu.step.manager.controllers;
 
-import edu.step.manager.model.Department;
-import edu.step.manager.model.Employee;
-import edu.step.manager.model.Gender;
+import edu.step.manager.model.*;
 import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -84,17 +82,24 @@ public class AddController {
             String name = nameTextField.getText();
             String surname = surnameTextField.getText();
             LocalDate date =  birthdatePicker.getValue();
-            Department departmentName = ObjectProperty(departmentTextField.getText());
+            String departmentName = departmentTextField.getText();
             String functionName = functionTextField.getText();
             String gender = genderTextField.getText();
             String streetName = streetNameTextField.getText();
             Integer streetNumber = Integer.parseInt(streetNumberTextField.getText());
             Integer houseNumber = Integer.parseInt(houseNumberTextField.getText());
             Integer apartNumber = Integer.parseInt(apartNumberTextField.getText());
+
+
             String idnp = idnpTextField.getText();
 
+            result = new Employee(id, name, surname, date,
+                     new Department(departmentName),
+                     new Profession(functionName),
+                     new Address(streetName, streetNumber, houseNumber, apartNumber),
+                     Gender.valueOf(gender),
+                     idnp);
 
-            result = new Employee(id, name, surname, date, departmentName, functionName, gender, streetName, streetNumber, houseNumber, apartNumber, idnp);
             closeWindow(event);
         }
     }

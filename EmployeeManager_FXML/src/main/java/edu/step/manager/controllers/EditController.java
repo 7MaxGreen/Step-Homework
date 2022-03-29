@@ -82,20 +82,19 @@ public class EditController {
 //        Integer id, String name, String surname, LocalDate birthdate, Department departmentObjectProperty, Profession
 //        professionObjectProperty, Address addressObjectProperty, Gender gender, String idnp
 
-        this.data = new Employee(
-                Integer.parseInt(idTextField.getText()),
-                nameTextField.getText(),
-                surnameTextField.getText(),
-                departmentTextField.getText(),
-                functionTextField.getText(),
-                birthdatePicker.getValue(),
-                streetNameTextField.getText(),
-                Integer.parseInt(streetNumberTextField.getText()),
-                Integer.parseInt(houseNumberTextField.getText()),
-                Integer.parseInt(apartNumberTextField.getText()),
-                genderTextField.getText(),
-                idnpTextField.getText()
-                );
+
+        this.data.setName(nameTextField.getText());
+        this.data.setSurname(surnameTextField.getText());
+        this.data.setId(Integer.parseInt(idTextField.getText()));
+        this.data.setDepartmentObjectProperty(new Department(departmentTextField.getText()));
+        this.data.setProfessionObjectProperty(new Profession(functionTextField.getText()));
+        this.data.setBirthdate(birthdatePicker.getValue());
+        this.data.setAddressObjectProperty(new Address(streetNameTextField.getText(),
+                                                       Integer.parseInt(streetNumberTextField.getText()),
+                                                       Integer.parseInt(houseNumberTextField.getText()),
+                                                       Integer.parseInt(apartNumberTextField.getText())));
+        this.data.setGender(Gender.valueOf(genderTextField.getText()));
+        this.data.setIdnp(idnpTextField.getText());
 
         closeWindow(event);
     }
@@ -105,6 +104,5 @@ public class EditController {
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
     }
-
 
 }

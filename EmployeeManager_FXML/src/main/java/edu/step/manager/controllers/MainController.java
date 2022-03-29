@@ -14,16 +14,14 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.stage.WindowEvent;
+import javafx.stage.*;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -189,6 +187,67 @@ public class MainController implements Initializable {
                 }
             }
         });
+    }
+
+
+    @FXML
+    void openExportFile(ActionEvent event) throws IOException{
+        DirectoryChooser chooser = new DirectoryChooser();
+        Node node = (Node) event.getSource();
+        File directory = chooser.showDialog(node.getScene().getWindow());
+        File textFile = new File(directory, "Test.txt");
+
+        System.out.println(directory.getAbsolutePath());
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "This option cannot be undone");
+        alert.setTitle("Please confirm");
+        alert.setHeaderText("Are you sure you want to write this file?");
+        Optional<ButtonType> optionalButton = alert.showAndWait();
+        if(optionalButton.get() == ButtonType.OK){
+//          FileWriter writer = new FileWriter(directory.getAbsolutePath() + "\\test.txt");
+            FileWriter writer = new FileWriter(textFile);
+//        FileWriter writer = new FileWriter(textFile, true ); // (boolean) to save info into a created file containing values;
+            writer.write("Exported from Employee manager FX");
+            writer.flush();
+            writer.close();
+        }
+    }
+
+
+    @FXML
+    void openImportFile(ActionEvent event) throws IOException{
+
+        FileChooser chooser = new FileChooser();
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("CSV", "*.csv" , "*.txt", "*.docs");
+        chooser.getExtensionFilters().add(filter);
+
+        Node node = (Node) event.getSource();
+        File result = chooser.showOpenDialog(node.getScene().getWindow());
+        if(result != null){
+            FileReader reader = new FileReader(result);
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String employeeText;
+
+            while((employeeText = bufferedReader.readLine()) != null) {
+                System.out.println(employeeText);
+                String[] data  = employeeText.split(",");
+//            data[0] -> id
+//            data[1] -> name
+//            data[2] -> surname
+//            data[3] -> birthdate
+//                    ...
+                employeeData.add(new Employee(Integer.parseInt(data[0]),
+                                        data[1],
+                                        data[2],
+                                        LocalDate.parse(data[3]),
+                                        new Department(data[4]),
+                                        new Profession(data[5]),
+                                        new Address(data[6], Integer.parseInt(data[7]), Integer.parseInt(data[8]), Integer.parseInt(data[9])),
+                                        Gender.valueOf(data[10]),
+                                        data[11]));
+
+            }
+        }
     }
 }
 

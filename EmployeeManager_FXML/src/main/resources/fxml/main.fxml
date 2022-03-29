@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="595.0" prefWidth="1288.0" style="-fx-background-color: #e9d8a6; -fx-border-radius: 30; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.step.manager.controllers.MainController">
    <children>
-      <TableView fx:id="tableView" layoutX="15.0" layoutY="10.0" prefHeight="576.0" prefWidth="1054.0" style="-fx-background-color: #94d2bd; -fx-background-radius: 15;">
+      <TableView fx:id="tableView" layoutX="24.0" layoutY="39.0" prefHeight="524.0" prefWidth="1054.0" style="-fx-background-color: #94d2bd;">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="37.000030517578125" text="ID" />
           <TableColumn fx:id="nameColumn" prefWidth="119.0" text="Name" />
@@ -26,7 +26,7 @@
             <DropShadow />
          </effect>
       </TableView>
-      <Button layoutX="1106.0" layoutY="209.0" mnemonicParsing="false" onAction="#openAddDialog" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #0a9396; -fx-text-fill: white; -fx-background-radius: 15;" text="Add employee">
+      <Button layoutX="1106.0" layoutY="39.0" mnemonicParsing="false" onAction="#openAddDialog" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #0a9396; -fx-text-fill: white; -fx-background-radius: 15;" text="Add employee">
          <font>
             <Font size="18.0" />
          </font>
@@ -36,7 +36,7 @@
          <effect>
             <DropShadow />
          </effect></Button>
-      <Button layoutX="1106.0" layoutY="278.0" mnemonicParsing="false" onAction="#openEditDialog" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #0a9396; -fx-text-fill: white; -fx-background-radius: 15;" text="Edit employee">
+      <Button layoutX="1106.0" layoutY="108.0" mnemonicParsing="false" onAction="#openEditDialog" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #0a9396; -fx-text-fill: white; -fx-background-radius: 15;" text="Edit employee">
          <font>
             <Font size="18.0" />
          </font>
@@ -46,7 +46,7 @@
          <effect>
             <DropShadow />
          </effect></Button>
-      <Button layoutX="1107.0" layoutY="348.0" mnemonicParsing="false" onAction="#openDeleteDialog" style="-fx-background-color: #0a9396; -fx-text-fill: white; -fx-background-radius: 15;" text="Delete employee">
+      <Button layoutX="1107.0" layoutY="178.0" mnemonicParsing="false" onAction="#openDeleteDialog" style="-fx-background-color: #0a9396; -fx-text-fill: white; -fx-background-radius: 15;" text="Delete employee">
          <font>
             <Font size="18.0" />
          </font>
@@ -56,5 +56,27 @@
          <effect>
             <DropShadow />
          </effect></Button>
+      <Button layoutX="1107.0" layoutY="520.0" mnemonicParsing="false" onAction="#openExportFile" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #0a9396; -fx-text-fill: white; -fx-background-radius: 15;" text="Export data">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button layoutX="1107.0" layoutY="457.0" mnemonicParsing="false" onAction="#openImportFile" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #0a9396; -fx-text-fill: white; -fx-background-radius: 15;" text="Import data">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
    </children>
 </AnchorPane>
