@@ -13,7 +13,7 @@ public class EmployeeService implements IEmployeeFilters{
     public List<String> findMales(List<Employee> employeeList) {
        return employeeList.stream()
                .filter(emp -> emp.getGender() == MALE)
-               .map(emp->emp.getName())
+               .map(emp -> emp.getName())
                .collect(Collectors.toList());
     }
 

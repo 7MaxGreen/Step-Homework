@@ -28,7 +28,7 @@ public class Employee {
 
     public void setId(Integer id) throws Exception {
         if(id < 0) {
-            throw new Exception("Id must be greater than 0");
+            throw new IllegalArgumentException("Id must be greater than 0");
         }
         this.id = id;
     }
@@ -54,11 +54,11 @@ public class Employee {
         return gender;
     }
 
-    public void setGender(Gender gender) throws Exception {
+    public void setGender(Gender gender) {
         if(gender.equals(Gender.MALE) || gender.equals(Gender.FEMALE) || gender.equals(Gender.NOT_DEFINED)){
             this.gender = gender;
         } else {
-            throw new Exception("Gender must be selected from the following : Male, Female, NOT_DEFINED");
+            throw new IllegalArgumentException("Gender must be selected from the following : Male, Female, NOT_DEFINED");
         }
 
     }
@@ -67,9 +67,9 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(Double salary) throws Exception {
-        if(salary.toString().contains( "[a-zA-Z]+")){
-            throw new Exception("Salary must contain only digits");
+    public void setSalary(Double salary) {
+        if(salary < 10){
+            throw new IllegalArgumentException("Salary must be greater than 10");
         }
          this.salary = salary;
     }

@@ -1,6 +1,7 @@
 package edu.step.model;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import java.time.LocalDate;
 
@@ -28,31 +29,31 @@ public class EmployeeTest {
     }
 
     @Test
-    public void setGender_expectedGender() throws Exception {
+    public void setGender_expectedGender()  {
         employee.setGender(Gender.FEMALE);
         Assertions.assertEquals(Gender.FEMALE, employee.getGender());
     }
 
 
     @Test
-    public void setSalary_expectedSalary() throws Exception {
+    public void setSalary_expectedSalary()  {
         employee.setSalary(8738293.393);
         Assertions.assertTrue(8738293.393 == employee.getSalary());
     }
 
     @Test
-    public void setSalary_notNumberSalary() throws Exception {
+    public void setSalary_notNumberSalary() {
         employee.setSalary(Double.valueOf(234.0+"666"));
         Assertions.assertEquals(234.0666, employee.getSalary());
     }
 
     @Test
-    public void setId_expectedId(){
-        try {
-            employee.setId(-4);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Assertions.assertNull( null, String.valueOf(employee.getId()));
+    public void setSalary_exceptionHandler() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> employee.setSalary(8.0));
+    }
+
+    @Test
+    public void setId_lowerThan0()  {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> employee.setId(-3));
     }
 }
