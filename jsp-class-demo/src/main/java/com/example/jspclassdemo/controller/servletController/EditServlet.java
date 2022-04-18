@@ -32,7 +32,7 @@ public class EditServlet extends HttpServlet {
         String streetName = req.getParameter("streetName");
         String apartmentNumber = req.getParameter("apartmentNumber");
         String houseNumber = req.getParameter("houseNumber");
-        String gender = String.valueOf(Gender.valueOf("gender"));
+        Gender gender = Gender.valueOf(req.getParameter("gender"));
         String id = req.getParameter("id");
 
         EmployeeManager manager = EmployeeManager.getInstance();
@@ -46,7 +46,7 @@ public class EditServlet extends HttpServlet {
         employee.setHireDate(hireDate);
         employee.setDismissDate(dismissDate);
         employee.setSalary(salary);
-        employee.setGender(Gender.valueOf(gender));
+        employee.setGender(gender);
         employee.setDepartment(new Department(department));
         employee.setProfession(new Profession(profession));
         employee.setAddress(new Address(streetName, streetNumber, apartmentNumber, houseNumber));

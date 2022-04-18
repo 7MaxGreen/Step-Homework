@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    background-image: url("https://images.pexels.com/photos/6191857/pexels-photo-6191857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+h1{
+    text-shadow: 2px 2px 12px black;
+}
+
+.container{
+    margin-top: 15px;
+}
+
+
+ul li {
+    background: linear-gradient(to right, azure, #e5eeee);
+
+    margin: 5px;
+    width: 25%;
+    border-radius: 5px;
+    list-style-type: none;
+}
+
+ul li a {
+    color: #184e77;
+    padding: 8px;
+    text-decoration: none;
+
+}
+
+a:hover {
+    text-shadow: 1px 1px 5px black;
+    font-weight: bold;
+}

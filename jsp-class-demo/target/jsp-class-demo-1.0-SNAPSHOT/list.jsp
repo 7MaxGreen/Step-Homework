@@ -6,33 +6,19 @@
 <html>
 <head>
     <style>
-
-        body, html {
-            height: 100%;
-        }
-
-        body {
-            background-image: url("https://images.pexels.com/photos/4427809/pexels-photo-4427809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-            background-repeat: no-repeat;
-            background-size: cover;
-            /*background-position: center;*/
-            height: 100%;
-            width: 100%;
-        }
-
-        h5{
-            color: white;
-        }
-
+        <%@ include file="style/list.css" %>
     </style>
+
     <title>View employees</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
 
 <div class="container-sm">
-<h3 class="display-1" style="color: aliceblue">|Employee list</h3>
+<h1 class="display-1" style="color: aliceblue">|Employee list</h1>
+
     <%@ include file="lib/navbar.html" %>
+
 <c:if test="${requestScope.activeFilter != null}">
     <div class="alert alert primary">
         <h5> Active filter : <c:out value="${requestScope.activeFilter}" /> </h5> <a class="btn btn-info" href="list">Clear</a>

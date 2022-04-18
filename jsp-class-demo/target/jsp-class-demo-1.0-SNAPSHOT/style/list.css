@@ -1,0 +1,22 @@
+
+body, html {
+    height: 100%;
+}
+
+body {
+    background-image: url("https://images.pexels.com/photos/4427809/pexels-photo-4427809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-position: center;*/
+    height: 100%;
+    width: 100%;
+}
+
+h5{
+    color: white;
+}
+
+h1{
+    color: white;
+    text-shadow: 12px 12px 6px black;
+}

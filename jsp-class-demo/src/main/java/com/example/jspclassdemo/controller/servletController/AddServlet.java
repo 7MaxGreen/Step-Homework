@@ -32,7 +32,16 @@ public class AddServlet extends HttpServlet {
         String streetName = req.getParameter("streetName");
         String apartmentNumber = req.getParameter("apartmentNumber");
         String houseNumber = req.getParameter("houseNumber");
-        String gender = String.valueOf(Gender.valueOf("gender"));
+
+        Gender gender = Gender.valueOf(req.getParameter("gender"));
+
+//            if (Gender.valueOf(req.getParameter("gender")).equals(Gender.MALE)) {
+//                gender = Gender.MALE;
+//            } else if (Gender.valueOf(req.getParameter("gender")).equals(Gender.FEMALE)) {
+//                 gender = Gender.FEMALE;
+//            } else gender = Gender.NOT_DEFINED;
+
+        System.out.println(gender);
 
         Address address = new Address(streetName, streetNumber, apartmentNumber, houseNumber);
         Department dep = new Department(department);
@@ -40,7 +49,7 @@ public class AddServlet extends HttpServlet {
 
         EmployeeManager manager = EmployeeManager.getInstance();
 
-        manager.create(new Employee(manager.nextId() , firstName, lastName, idnp, phoneNumber, email,  salary, birthdate, hireDate, dismissDate, dep, address , prof, Gender.valueOf(gender)));
+        manager.create(new Employee(manager.nextId() , firstName, lastName, idnp, phoneNumber, email,  salary, birthdate, hireDate, dismissDate, dep, address , prof, gender));
 
         resp.sendRedirect("list");
 

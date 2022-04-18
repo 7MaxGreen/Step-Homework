@@ -2,80 +2,9 @@
 <html>
 <head>
     <style>
-        body {
-            background-image: url("https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-        }
-
-        .container{
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-top: 20px;
-        }
-
-
-
-        h1{
-            color: white;
-        }
-
-        label, p, h3{
-            color: white;
-        }
-
-        textarea{
-            margin-top: -15px;
-            resize: none;
-            width: 100%;
-            height: 165px;
-            background-color: white;
-            border: 2px solid  #eaeef1;
-            border-radius: 5px;
-        }
-
-        .gallery-team{
-            display: flex;
-            flex-wrap: wrap;
-            color: #fff;
-        }
-
-
-
-        .gallery-team-item{
-            width: calc(25% - 30px);
-            margin: 15px;
-            min-height: 300px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .gallery-team-item img{
-            width: 100%;
-        }
-
-        .gallery-team-title{
-
-            padding: 10px;
-            visibility: hidden;
-            background-color: #23b7a4;
-            display: flex;
-            text-align: left;
-            flex-direction: column;
-            z-index: 1;
-        }
-
-        a:hover {
-            cursor: pointer;
-            border: 2px solid white;
-            border-radius: 5px;
-            text-decoration-color: aqua;
-        }
-
-
+        <%@ include file="style/contact.css" %>
     </style>
+
     <title style="color: aliceblue">Contact info</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -104,10 +33,10 @@
         </div>
         <br>
 
-        <button class="btn btn-dark" type="submit" style="margin-left: 700px; width: 69px; border:1px solid aqua">Send</button>
+        <button class="btn btn-dark" type="submit" style="margin-left: 700px; width: 69px; border:1px solid white">Send</button>
         <br>
         <br>
-        <a style="margin-left: 700px; border: 1px solid black" class="btn btn-info" href="${pageContext.request.contextPath}/">Home</a>
+        <a style="margin-left: 700px; border: 1px solid black" class="btn btn-light" href="${pageContext.request.contextPath}/">Home</a>
 
     </form>
 </div>
@@ -115,19 +44,49 @@
 <div class="container ml-3" >
     <h1>Come see us</h1>
 
-    <p style="margin-top: 83px">799 EmployeeStreet</p>
-    <p>New Virginia Avenue TW390 P</p>
+    <h4 style="margin-top: 83px">799 EmployeeStreet</h4>
+    <h4>New Virginia Avenue TW390 P</h4>
     <h3>We're thrilled to hear from you</h3>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+
     <div class="gallery-team">
         <div class="gallery-team-item">
 
-<%--            <img src="<%@ include file="img/benicio.jpg" %>" alt="ceo"/>--%>
+            <img src="./img/ceo.jpg" alt="ceo"/>
             <div class="gallery-team-title">
 
-                <h5>Benicio Del Toro</h5>
-                <p> Client Service Director</p>
+                <h5>Richard Guillermo</h5>
+                <p> CEO</p>
+                <small>(483) 89 - 2 - 398</small>
             </div>
         </div>
+        <div class="gallery-team-item">
+
+            <img src="./img/naomi.jpg" alt="ceo"/>
+            <div class="gallery-team-title">
+
+                <h5>Naomi Watts</h5>
+                <p> Client Service Director</p>
+                <small>(483) 89 - 2 - 398</small>
+            </div>
+        </div>
+        <div class="gallery-team-item">
+
+            <img src="./img/benicio.jpg" alt="ceo"/>
+            <div class="gallery-team-title">
+
+                <h5>Benicio DelToro</h5>
+                <p> Client Service Director</p>
+                <small>(483) 89 - 2 - 398</small>
+            </div>
+        </div>
+
     </div>
 </div>
 </body>

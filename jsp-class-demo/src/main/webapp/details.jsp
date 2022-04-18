@@ -10,24 +10,9 @@
 <html>
   <head>
       <style>
-          body {
-              background-image: url("https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: center;
-          }
-
-          .container-lg{
-              margin-top: 15px;
-              width: 100%;
-          }
-
-          .btn {
-              width: 72px;
-              height: 38px;
-          }
-
+         <%@ include file="style/details.css" %>
       </style>
+
       <title>Employee Details</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   </head>
@@ -94,6 +79,8 @@
               </div>
           </div>
       </div>
+      <a style="margin:10px 0 0 94.5%; background: whitesmoke; color: black;" class="btn btn-default" href="list">Back</a>
+
   </div>
 
   <script>

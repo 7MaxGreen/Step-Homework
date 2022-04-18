@@ -26,10 +26,10 @@ public class EmployeeManager {
     }
 
     private EmployeeManager() {
-        for (int i = 0; i < 180; i++) {
-            employees.add(new Employee(i, "Employee " + i, "Dandy", "12345678", "23-22-32", "em@em.com",
+        for (int i = 0; i < 10; i++) {
+            employees.add(new Employee(i, "Employee " + i, "Trump", "12345678", "23-22-32", "em@em.com",
                     2323.32, LocalDate.now(), LocalDate.now(), LocalDate.now(),
-                    new Department("IT"), new Address("Vasile lupu 39"), new Profession("Java back end dev"), Gender.MALE ));
+                    new Department("IT"), new Address("Kingston", "89", "333/2", "-"), new Profession("Java dev"), Gender.MALE ));
 
         }
     }

@@ -1,0 +1,26 @@
+
+body {
+    background-image: url("https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    margin-top: 11%;
+}
+
+h1{
+    color: white;
+    text-shadow: 12px 12px 8px black;
+}
+
+
+h2{
+    color: darkgoldenrod;
+}
+
+a:hover {
+    background-image: linear-gradient(to right, black, darkgoldenrod);
+}
+
